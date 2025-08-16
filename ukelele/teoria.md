@@ -4,19 +4,23 @@
 
 ---
 
-## 1. Cifrado Americano
+## 1. Fundamentos de la Notación Musical
+
+### Cifrado Americano
 El **cifrado americano** es una forma de nombrar las notas musicales usando letras:
 
 | Nota | Do | Re | Mi | Fa | Sol | La | Si |
 |------|----|----|----|----|-----|----|----|
 | Letra| C  | D  | E  | F  | G   | A  | B  |
 
+### Grados de la Escala
 **Grados de la escala mayor (en C):**
 | I  | II | III | IV | V  | VI | VII |
 |----|----|-----|----|----|----|-----|
 | C  | D  | E   | F  | G  | A  | B   |
 
-**Ejemplo de todas las notas (escala cromática):**
+### Escala Cromática
+**Todas las notas musicales (incluyendo sostenidos y bemoles):**
 ```
 C - C#/Db - D - D#/Eb - E - F - F#/Gb - G - G#/Ab - A - A#/Bb - B - C
 ```
@@ -24,7 +28,9 @@ C - C#/Db - D - D#/Eb - E - F - F#/Gb - G - G#/Ab - A - A#/Bb - B - C
 ---
 
 ## 2. Escala Mayor
-**Estructura:**
+
+### Estructura de la Escala Mayor
+**Fórmula de intervalos:**
 T = tono (2 semitonos)
 ST = semitono (1 nota)
 
@@ -32,18 +38,21 @@ ST = semitono (1 nota)
 T - T - ST - T - T - T - ST
 ```
 
-**Escala mayor:**
-- C: C  - D  - E  - F  - G  - A  - B  - C
-- G: G  - A  - B  - C  - D  - E  - F# - G
-- D: D  - E  - F# - G  - A  - B  - C# - D
-- A: A  - B  - C# - D  - E  - F# - G# - A
-- E: E  - F# - G# - A  - B  - C# - D# - E
-- B: B  - C# - D# - E  - F# - G# - A# - B
-- F: F  - G  - A  - Bb - C  - D  - E  - F
+### Ejemplos de Escalas Mayores
+**Escalas en diferentes tonalidades:**
+- **C**: C  - D  - E  - F  - G  - A  - B  - C
+- **G**: G  - A  - B  - C  - D  - E  - F# - G
+- **D**: D  - E  - F# - G  - A  - B  - C# - D
+- **A**: A  - B  - C# - D  - E  - F# - G# - A
+- **E**: E  - F# - G# - A  - B  - C# - D# - E
+- **B**: B  - C# - D# - E  - F# - G# - A# - B
+- **F**: F  - G  - A  - Bb - C  - D  - E  - F
 
 ---
 
-## 3. Progresión de Escala Mayor (Ukelele)
+## 3. Diagramas de Escala Mayor (Ukelele)
+
+**Nota**: Esta sección muestra cómo tocar las notas individuales de la escala mayor en el ukelele. En la siguiente sección verás cómo construir acordes completos usando estas notas.
 
 **Primera posición (C Mayor):**
 ```

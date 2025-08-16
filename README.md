@@ -4,10 +4,8 @@ Repositorio personal para almacenar información musical, incluyendo teoría, ca
 
 ## 📚 Índice
 
-### 🎸 Ukelele
-- [Índice de Ukelele](./ukelele/README.md) - Teoría musical y repertorio de canciones
-- [Teoría Musical](./ukelele/teoria.md) - Conceptos básicos y avanzados, escalas, acordes diatónicos
-- [Repertorio de Canciones](./ukelele/canciones/README.md) - Índice de canciones disponibles
+- [Ukelele](./ukelele/README.md) - Teoría musical y repertorio de canciones enfocado en ukelele.
+- [Otro instrumento]() - Proximamente.
 
 ---
 

@@ -1,0 +1,22 @@
+---
+---
+/* CSS personalizado para el tema Midnight de GitHub Pages */
+@import "{{ site.theme }}";
+
+/* Ocultar el botón "View On GitHub" - selector específico del tema Midnight */
+#header nav ul li.fork {
+    display: none !important;
+}
+
+/* Ocultar los créditos del tema - selectores específicos del tema Midnight */
+section #title .credits.right {
+    display: none !important;
+}
+
+/* Ocultar elementos adicionales del footer si existen */
+.footer,
+.site-footer,
+.site-footer-credits,
+.site-footer-owner {
+    display: none !important;
+}

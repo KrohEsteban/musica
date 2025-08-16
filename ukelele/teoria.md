@@ -1,6 +1,6 @@
 # 📒 Resumen de Teoría Musical - Ukelele
 
-[← Volver al índice principal](../README.md) | [🎵 Ir a Canciones](./canciones.md)
+[← Volver al índice principal](../README.md) | [🎵 Ir a Canciones](./canciones/README.md)
 
 ---
 
@@ -10,14 +10,15 @@
 El **cifrado americano** es una forma de nombrar las notas musicales usando letras:
 
 | Nota | Do | Re | Mi | Fa | Sol | La | Si |
-|------|----|----|----|----|-----|----|----|
-| Letra| C  | D  | E  | F  | G   | A  | B  |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Letra | C | D | E | F | G | A | B |
 
 ### Grados de la Escala
 **Grados de la escala mayor (en C):**
-| I  | II | III | IV | V  | VI | VII |
-|----|----|-----|----|----|----|-----|
-| C  | D  | E   | F  | G  | A  | B   |
+
+| Grado | I | II | III | IV | V | VI | VII |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Nota | C | D | E | F | G | A | B |
 
 ### Escala Cromática
 **Todas las notas musicales (incluyendo sostenidos y bemoles):**
@@ -823,4 +824,4 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
 
 ---
 
-[← Volver al índice principal](../README.md) | [🎵 Ir a Canciones](./canciones.md)
+[← Volver al índice principal](../README.md) | [🎵 Ir a Canciones](./canciones/README.md)

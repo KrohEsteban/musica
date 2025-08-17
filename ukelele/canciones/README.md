@@ -29,6 +29,7 @@
 - [Time After Time](./Time_After_Time_TAB.pdf) - Cyndi Lauper
 - [Hoppipolla](./Hoppipolla_TAB.pdf) - Sigur Rós
 - [Juntos A La Par](./Juntos_A_La_Par_Papo_TAB.pdf) - Papo
+- [Tu Misterioso Alguien](./Tu_Misterioso_Alguien_TAB.pdf) - Miranda!
 
 ### 🎼 **Clásicos & Jazz**
 - [Blackbird](./Blackbird_TAB.pdf) - The Beatles

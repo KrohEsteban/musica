@@ -243,7 +243,7 @@ Esta tabla muestra la conversión para ukelele con afinación Low G:
 - **Números**: Indican el traste donde presionar cada cuerda
 
 **¿Cuál usar?**
-- **High G**: Afinación estándar, más común en ukeleles
+- **High G**: Afiyvnación estándar, más común en ukeleles
 - **Low G**: Afinación alternativa, proporciona más rango grave
 
 ### Duración de las Notas
@@ -298,6 +298,14 @@ Esta imagen muestra claramente cómo se ven las diferentes notas y sus duracione
 - **cresc.**: Crescendo (aumentar volumen)
 - **dim.**: Diminuendo (disminuir volumen)
 
+### Ventajas de Aprender Partituras
+
+✅ **Comunicación universal** con otros músicos
+✅ **Entendimiento completo** de la música
+✅ **Desarrollo de oído musical**
+✅ **Acceso a todo el repertorio musical**
+✅ **Mejora la comprensión** de teoría musical
+
 ### Comparación: Partitura vs Tablatura
 
 | Aspecto | Partitura | Tablatura |
@@ -308,38 +316,6 @@ Esta imagen muestra claramente cómo se ven las diferentes notas y sus duracione
 | **Universalidad** | ✅ Entendible en todo el mundo | ❌ Solo para instrumentos específicos |
 | **Teoría musical** | ✅ Enseña conceptos musicales | ❌ Solo técnica instrumental |
 | **Dificultad** | ❌ Requiere estudio previo | ✅ Fácil de aprender |
-
-### Consejos para Aprender Partituras
-
-1. **Comienza con la clave de Sol** (más común)
-2. **Aprende las notas básicas** en líneas y espacios
-3. **Practica con melodías simples** como canciones infantiles
-4. **Usa reglas mnemotécnicas** para recordar las notas
-5. **Combina partitura y tablatura** al principio
-6. **Practica diariamente** con ejercicios de lectura
-
-### Ventajas de Aprender Partituras
-
-✅ **Comunicación universal** con otros músicos
-✅ **Entendimiento completo** de la música
-✅ **Desarrollo de oído musical**
-✅ **Acceso a todo el repertorio musical**
-✅ **Mejora la comprensión** de teoría musical
-
-### 💡 **Uso Práctico de las Tablas**
-
-**Tablas de Conversión (High G y Low G):**
-- **Para principiantes**: Usa la tabla que corresponda a tu afinación
-- **Para transcribir**: Convierte melodías de piano a ukelele
-- **Para aprender**: Entiende la relación entre notación y técnica instrumental
-- **Para diferentes ukeleles**: Usa High G para soprano/concierto, Low G para tenor/barítono
-
-**Tabla de Tiempos:**
-- **Para el ritmo**: Identifica la duración de cada nota
-- **Para el tempo**: Mantén el tiempo correcto al tocar
-- **Para la interpretación**: Respeta las pausas y duraciones marcadas
-
-**Consejo práctico**: Mantén estas imágenes como referencia mientras aprendes a leer partituras. Con el tiempo, reconocerás las notas y tiempos automáticamente.
 
 ---
 

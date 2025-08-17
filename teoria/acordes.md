@@ -6,11 +6,11 @@ description: Acordes diatónicos para todas las escalas mayores
 
 # Construcción de Acordes
 
-[← Volver al índice principal](../README.md) | [← Módulo anterior: Escalas](./escalas.md)
+[← Volver al índice principal](../README.md)
 
 ---
 
-## Contenido del Módulo
+## Contenido
 
 - [¿Qué son los Acordes Diatónicos?](#qué-son-los-acordes-diatónicos)
 - [Construcción de Acordes](#construcción-de-acordes)
@@ -783,10 +783,9 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
 ## Navegación
 
 - **🏠 Inicio**: [Teoría Musical para Ukelele](../README.md)
-- **📚 Módulo anterior**: [Escala Mayor](./escalas.md)
-- **📚 Siguiente módulo**: [Progresiones y Práctica](./progresiones.md)
+- **📚 Teoría**: [Fundamentos](./fundamentos.md) | [Escalas y Progresiones](./escalas.md)
 - **🎵 Canciones**: [Repertorio Completo](../canciones/)
 
 ---
 
-*Este módulo cubre la construcción de acordes diatónicos para todas las escalas mayores. Continúa con el siguiente módulo para aprender sobre progresiones de acordes.*
+*Esta sección cubre la construcción de acordes diatónicos para todas las escalas mayores. Continúa con fundamentos o escalas y progresiones.*

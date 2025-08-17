@@ -203,13 +203,6 @@ Una **partitura** es la notación musical estándar que representa la música de
 ─────────────  ← Línea 1 (inferior)
 ```
 
-**Las 5 líneas se cuentan de abajo hacia arriba:**
-- **Línea 1**: E (Mi)
-- **Línea 2**: G (Sol)
-- **Línea 3**: B (Si)
-- **Línea 4**: D (Re)
-- **Línea 5**: F (Fa)
-
 ### Claves Musicales
 
 #### **Clave de Sol (G)**
@@ -233,14 +226,25 @@ Una **partitura** es la notación musical estándar que representa la música de
 **La clave de Fa indica que la nota F (Fa) está en la línea 4**
 
 ### Correspondencia: Partitura ↔ Ukelele
-Esta tabla muestra cómo las notas del pentagrama se traducen a posiciones específicas en el ukelele:
 
-![Piano to Ukulele Tabs](../assets/img/partitura_notas.png)
+#### **Afinación High G (GCEA) - Estándar**
+Esta tabla muestra la conversión para ukelele con afinación estándar High G:
 
-**Explicación de la tabla:**
+![Piano to Ukulele Tabs - High G](../assets/img/partitura_notas_high_G.png)
+
+#### **Afinación Low G (GCEA) - Alternativa**
+Esta tabla muestra la conversión para ukelele con afinación Low G:
+
+![Piano to Ukulele Tabs - Low G](../assets/img/partitura_notas_low_G.png)
+
+**Explicación de las tablas:**
 - **Notas naturales** (C, D, E, F, G, A, B): Posiciones en trastes específicos
 - **Notas alteradas** (C#/Db, D#/Eb, F#/Gb, G#/Ab, A#/Bb): Posiciones con sostenidos y bemoles
 - **Números**: Indican el traste donde presionar cada cuerda
+
+**¿Cuál usar?**
+- **High G**: Afinación estándar, más común en ukeleles
+- **Low G**: Afinación alternativa, proporciona más rango grave
 
 ### Duración de las Notas
 
@@ -324,10 +328,11 @@ Esta imagen muestra claramente cómo se ven las diferentes notas y sus duracione
 
 ### 💡 **Uso Práctico de las Tablas**
 
-**Tabla de Conversión:**
-- **Para principiantes**: Usa esta tabla para encontrar dónde tocar cada nota
+**Tablas de Conversión (High G y Low G):**
+- **Para principiantes**: Usa la tabla que corresponda a tu afinación
 - **Para transcribir**: Convierte melodías de piano a ukelele
 - **Para aprender**: Entiende la relación entre notación y técnica instrumental
+- **Para diferentes ukeleles**: Usa High G para soprano/concierto, Low G para tenor/barítono
 
 **Tabla de Tiempos:**
 - **Para el ritmo**: Identifica la duración de cada nota

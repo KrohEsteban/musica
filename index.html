@@ -1,0 +1,233 @@
+---
+layout: default
+title: Teoría Musical para Ukelele
+---
+
+<style>
+  .main-nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .nav-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    color: white;
+    text-decoration: none;
+  }
+
+  .nav-section h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.4rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 0.5rem;
+  }
+
+  .nav-section p {
+    margin: 0;
+    opacity: 0.9;
+    line-height: 1.5;
+  }
+
+  .theory-nav {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+
+  .songs-nav {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  }
+
+  .theory-modules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .module-link {
+    background: white;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    padding: 1rem;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    display: block;
+  }
+
+  .module-link:hover {
+    border-color: #4facfe;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 172, 254, 0.3);
+    text-decoration: none;
+    color: #333;
+  }
+
+  .module-number {
+    background: #4facfe;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .module-title {
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+
+  .module-desc {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+  }
+
+
+
+  .stats-bar {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .stat-item {
+    display: inline-block;
+    margin: 0 1.5rem;
+    font-weight: bold;
+  }
+
+  .stat-number {
+    color: #4facfe;
+    font-size: 1.5rem;
+  }
+
+  .intro-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .intro-section h1 {
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem;
+  }
+
+  .intro-section p {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+</style>
+
+<div class="intro-section">
+  <h1>🎵 Teoría Musical para Ukelele</h1>
+  <p>Repositorio completo de teoría musical aplicada al ukelele con un extenso repertorio de canciones</p>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-number">6</div>
+    <div>Módulos de Teoría</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">30</div>
+    <div>Canciones</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">6</div>
+    <div>Géneros Musicales</div>
+  </div>
+</div>
+
+<div class="main-nav">
+  <!-- Sección de Teoría Musical -->
+  <section class="nav-section theory-nav">
+    <h3>📚 Teoría Musical</h3>
+    <p>Aprende los fundamentos de la música aplicados específicamente al ukelele, desde notación básica hasta construcción de acordes.</p>
+
+    <div class="theory-modules">
+      <a href="teoria/fundamentos.html" class="module-link">
+        <div><span class="module-number">1</span><span class="module-title">Fundamentos</span></div>
+        <p class="module-desc">Cifrado americano, grados de escala</p>
+      </a>
+
+      <a href="teoria/tablaturas.html" class="module-link">
+        <div><span class="module-number">2</span><span class="module-title">Tablaturas</span></div>
+        <p class="module-desc">Sistemas de notación, técnicas</p>
+      </a>
+
+      <a href="teoria/partituras.html" class="module-link">
+        <div><span class="module-number">3</span><span class="module-title">Partituras</span></div>
+        <p class="module-desc">Pentagrama, claves musicales</p>
+      </a>
+
+      <a href="teoria/escalas.html" class="module-link">
+        <div><span class="module-number">4</span><span class="module-title">Escalas</span></div>
+        <p class="module-desc">Estructura de escalas mayores</p>
+      </a>
+
+      <a href="teoria/acordes.html" class="module-link">
+        <div><span class="module-number">5</span><span class="module-title">Acordes</span></div>
+        <p class="module-desc">Construcción y acordes diatónicos</p>
+      </a>
+
+      <a href="teoria/progresiones.html" class="module-link">
+        <div><span class="module-number">6</span><span class="module-title">Progresiones</span></div>
+        <p class="module-desc">Progresiones comunes y práctica</p>
+      </a>
+    </div>
+  </section>
+
+    <!-- Sección de Canciones -->
+  <section class="nav-section songs-nav">
+    <h3>🎵 Repertorio de Canciones</h3>
+    <p>Catálogo completo de 30 canciones organizadas por géneros para aplicar toda la teoría aprendida.</p>
+
+    <div style="text-align: center; margin: 2rem 0;">
+      <a href="canciones/" style="display: inline-block; background: white; color: #43e97b; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0, 0, 0, 0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.1)';">
+        📚 Explorar Catálogo de Canciones →
+      </a>
+    </div>
+
+    <div style="background: rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 1.5rem; margin-top: 1rem;">
+      <h4 style="margin: 0 0 1rem 0; text-align: center;">Géneros Disponibles</h4>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.5rem; text-align: center;">
+        <div>🎮 Videogames (3)</div>
+        <div>🎸 Rock & Alternative (9)</div>
+        <div>🎵 Pop & Contemporánea (7)</div>
+        <div>🎼 Clásicos & Jazz (5)</div>
+        <div>🎭 Clásica & Instrumental (2)</div>
+        <div>🎤 Folk & Acústica (3)</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div style="text-align: center; margin: 3rem 0; padding: 2rem; background: #f8f9fa; border-radius: 8px;">
+  <h3>🚀 Comienza tu Aprendizaje</h3>
+  <p>¿Nuevo en el ukelele? Te recomendamos empezar con <a href="teoria/fundamentos.html">Fundamentos</a> y luego continuar secuencialmente por cada módulo.</p>
+  <p>¿Ya tienes experiencia? Salta directamente a <a href="teoria/acordes.html">Acordes</a> o explora nuestro <a href="canciones/">repertorio de canciones</a>.</p>
+</div>

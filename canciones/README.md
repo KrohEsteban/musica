@@ -1,6 +1,17 @@
-# 🎼 Canciones de Ukelele
+---
+layout: default
+title: Canciones de Ukelele
+description: Repertorio completo de 30 canciones organizadas por géneros
+---
 
-[← Volver a Ukelele](../README.md) | [📚 Ir a Teoría](../teoria.md)
+# Canciones de Ukelele
+
+## 🔗 **Navegación**
+
+- **🏠 Inicio**: [Teoría Musical para Ukelele](../README.md)
+- **📚 Teoría**: [Fundamentos](../README.md#1-fundamentos-de-la-notación-musical) | [Escalas](../README.md#4-escala-mayor) | [Acordes](../README.md#6-construcción-de-acordes)
+- **🎵 Repertorio**: 42 canciones organizadas por género
+- **🔄 Volver**: [Teoría + Canciones](../README.md#repertorio-de-canciones)
 
 ---
 
@@ -19,8 +30,8 @@
 - [Fix You](./Fix_You_TAB.pdf) - Coldplay
 - [Chasing Cars](./Chasing_Cars_TAB.pdf) - Snow Patrol
 - [Someone You Loved](./Someone_You_Loved_TAB.pdf) - Lewis Capaldi
-- [Estadio Azteca](./Estadio_Azteca_TAB.pdf) - Andrés Calamaro
-- [Silencio](./Silencio_TAB.pdf) - Los Tipitos
+- [Estadio Azteca](./ESTADIO_AZTECA_Andres_Calamaro_Acordes.pdf) - Andrés Calamaro
+- [Silencio](./Silencio_Tab_por_Los_Tipitos-Ukulele_Tabs.pdf) - Los Tipitos
 - [Agua](./Agua_Tab_por_Jarabe_De_Palo_Ukulele_Tabs.pdf) - Jarabe de Palo
 
 ### 🎵 **Pop & Contemporánea**
@@ -49,3 +60,13 @@
 ### 🎤 **Folk & Acústica**
 - [The Sound of Silence](./The_Sound_of_Silence_TAB.pdf) - Simon & Garfunkel
 - [Hallelujah](./Hallelujah_TAB.pdf) - Leonard Cohen
+
+---
+
+## 🔗 **Navegación**
+
+- **🏠 Inicio**: [Teoría Musical para Ukelele](../README.md)
+- **📚 Teoría**: [Fundamentos](../README.md#1-fundamentos-de-la-notación-musical) | [Escalas](../README.md#4-escala-mayor) | [Acordes](../README.md#6-construcción-de-acordes)
+- **🎵 Repertorio**: 42 canciones organizadas por género
+
+---

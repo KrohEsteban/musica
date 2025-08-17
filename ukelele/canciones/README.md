@@ -21,6 +21,7 @@
 - [Someone You Loved](./Someone_You_Loved_TAB.pdf) - Lewis Capaldi
 - [Estadio Azteca](./Estadio_Azteca_TAB.pdf) - Andrés Calamaro
 - [Silencio](./Silencio_TAB.pdf) - Los Tipitos
+- [Agua](./Agua_Tab_por_Jarabe_De_Palo_Ukulele_Tabs.pdf) - Jarabe de Palo
 
 ### 🎵 **Pop & Contemporánea**
 - [A Thousand Years](./A_Thousand_Years_TAB.pdf) - Christina Perri

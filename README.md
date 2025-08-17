@@ -1,6 +1,6 @@
 # 🎵 Teoría Musical para Ukelele
 
-Repositorio personal de teoría musical aplicada al ukelele con un extenso repertorio de canciones organizadas por géneros.
+Página personal de Esteban Kroh con teoría musical aplicada al ukelele y con un repertorio de canciones.
 
 ---
 
@@ -31,14 +31,14 @@ Repositorio personal de teoría musical aplicada al ukelele con un extenso reper
 
 ## 🎵 Repertorio de Canciones
 
-### 📚 [Catálogo Completo de Canciones](./canciones/)
-**30 canciones organizadas por géneros**
-- 🎮 Videogames & Soundtracks (3)
-- 🎸 Rock & Alternative (9)
-- 🎵 Pop & Contemporánea (7)
-- 🎼 Clásicos & Jazz (5)
-- 🎭 Clásica & Instrumental (2)
-- 🎤 Folk & Acústica (3)
+### 📚 [Catálogo Completo de Canciones](./canciones/README.md)
+**Canciones organizadas por géneros**
+- 🎮 Videogames & Soundtracks
+- 🎸 Rock & Alternative
+- 🎵 Pop & Contemporánea
+- 🎼 Clásicos & Jazz
+- 🎭 Clásica & Instrumental
+- 🎤 Folk & Acústica
 
 ---
 
@@ -47,7 +47,7 @@ Repositorio personal de teoría musical aplicada al ukelele con un extenso reper
 - **🚀 Para principiantes**: Empieza con [Fundamentos](./teoria/fundamentos.md)
 - **🎯 Para practicar**: Ve a [Escalas y Progresiones](./teoria/escalas.md)
 - **🎸 Para acordes**: Consulta [Construcción de Acordes](./teoria/acordes.md)
-- **🎵 Para tocar**: Explora el [Catálogo de Canciones](./canciones/)
+- **🎵 Para tocar**: Explora el [Catálogo de Canciones](./canciones/README.md)
 
 ---
 

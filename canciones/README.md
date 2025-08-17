@@ -9,8 +9,10 @@ description: Repertorio completo de 30 canciones organizadas por géneros
 ## 🔗 Navegación
 
 - **🏠 Inicio**: [Teoría Musical para Ukelele](../README.md)
-- **📚 Teoría**: [Fundamentos](../teoria/fundamentos.md) | [Escalas y Progresiones](../teoria/escalas.md) | [Construcción de Acordes](../teoria/acordes.md)
-- **🎵 Repertorio**: 30 canciones organizadas por género
+- **📚 Teoría**:
+    - [Fundamentos](../teoria/fundamentos.md)
+    - [Escalas y Progresiones](../teoria/escalas.md)
+    - [Construcción de Acordes](../teoria/acordes.md)
 
 ---
 
@@ -76,7 +78,9 @@ description: Repertorio completo de 30 canciones organizadas por géneros
 ## 🔗 Navegación
 
 - **🏠 Inicio**: [Teoría Musical para Ukelele](../README.md)
-- **📚 Teoría**: [Fundamentos](../teoria/fundamentos.md) | [Escalas y Progresiones](../teoria/escalas.md) | [Construcción de Acordes](../teoria/acordes.md)
-- **🎵 Repertorio**: 30 canciones organizadas por género
+- **📚 Teoría**:
+    - [Fundamentos](../teoria/fundamentos.md)
+    - [Escalas y Progresiones](../teoria/escalas.md)
+    - [Construcción de Acordes](../teoria/acordes.md)
 
 ---

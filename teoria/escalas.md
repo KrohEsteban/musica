@@ -100,8 +100,10 @@ Esta progresión es la base de miles de canciones porque crea un ciclo perfecto 
 ## Navegación
 
 - **🏠 Inicio**: [Teoría Musical para Ukelele](../README.md)
-- **📚 Teoría**: [Fundamentos](./fundamentos.md) | [Construcción de Acordes](./acordes.md)
-- **🎵 Canciones**: [Repertorio Completo](../canciones/)
+- **📚 Teoría**:
+    - [Fundamentos](./fundamentos.md)
+    - [Construcción de Acordes](./acordes.md)
+- **🎵 Canciones**: [Repertorio Completo](../canciones/README.md)
 
 ---
 

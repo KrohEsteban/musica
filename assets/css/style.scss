@@ -1,15 +1,10 @@
 ---
 ---
-/* CSS personalizado para el tema Midnight de GitHub Pages */
+/* CSS personalizado para el tema Cayman de GitHub Pages */
 @import "{{ site.theme }}";
 
-/* Ocultar el botón "View On GitHub" - selector específico del tema Midnight */
-#header nav ul li.fork {
-    display: none !important;
-}
-
-/* Ocultar los créditos del tema - selectores específicos del tema Midnight */
-section #title .credits.right {
+/* Ocultar el botón "View On GitHub" - Específico para tema Cayman */
+.page-header .btn {
     display: none !important;
 }
 

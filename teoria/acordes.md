@@ -783,8 +783,10 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
 ## Navegación
 
 - **🏠 Inicio**: [Teoría Musical para Ukelele](../README.md)
-- **📚 Teoría**: [Fundamentos](./fundamentos.md) | [Escalas y Progresiones](./escalas.md)
-- **🎵 Canciones**: [Repertorio Completo](../canciones/)
+- **📚 Teoría**:
+    - [Fundamentos](./fundamentos.md)
+    - [Escalas y Progresiones](./escalas.md)
+- **🎵 Canciones**: [Repertorio Completo](../canciones/README.md)
 
 ---
 

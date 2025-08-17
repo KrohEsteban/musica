@@ -338,8 +338,10 @@ Esta imagen muestra claramente cómo se ven las diferentes notas y sus duracione
 ## Navegación
 
 - **🏠 Inicio**: [Teoría Musical para Ukelele](../README.md)
-- **📚 Teoría**: [Escalas y Progresiones](./escalas.md) | [Construcción de Acordes](./acordes.md)
-- **🎵 Canciones**: [Repertorio Completo](../canciones/)
+- **📚 Teoría**:
+    - [Escalas y Progresiones](./escalas.md)
+    - [Construcción de Acordes](./acordes.md)
+- **🎵 Canciones**: [Repertorio Completo](../canciones/README.md)
 
 ---
 

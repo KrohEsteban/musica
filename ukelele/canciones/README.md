@@ -26,6 +26,7 @@
 - [True Colours](./True_Colours_TAB.pdf) - Cyndi Lauper
 - [Time After Time](./Time_After_Time_TAB.pdf) - Cyndi Lauper
 - [Hoppipolla](./Hoppipolla_TAB.pdf) - Sigur Rós
+- [Juntos A La Par](./Juntos_A_La_Par_Papo_TAB.pdf) - Papo
 
 ### 🎼 **Clásicos & Jazz**
 - [Blackbird](./Blackbird_TAB.pdf) - The Beatles

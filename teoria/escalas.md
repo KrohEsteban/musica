@@ -1,6 +1,9 @@
-# Escalas y Progresiones
+---
+title: "🎼 Escalas y Progresiones"
+description: "Estructura de escalas mayores y progresiones comunes para ukelele"
+---
 
-[← Volver al índice principal](../README.md)
+[<- Volver al índice principal](../README.md)
 
 ---
 
@@ -101,8 +104,8 @@ Esta progresión es la base de miles de canciones porque crea un ciclo perfecto 
 
 - **🏠 Inicio**: [Teoría Musical para Ukelele](../README.md)
 - **📚 Teoría**:
-    - [Fundamentos](./fundamentos.md)
-    - [Construcción de Acordes](./acordes.md)
+    - 🎯 [Fundamentos](./fundamentos.md)
+    - 🎸 [Construcción de Acordes](./acordes.md)
 - **🎵 Canciones**: [Repertorio Completo](../canciones/README.md)
 
 ---

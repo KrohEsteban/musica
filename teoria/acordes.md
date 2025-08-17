@@ -1,12 +1,9 @@
 ---
-layout: default
-title: Construcción de Acordes
-description: Acordes diatónicos para todas las escalas mayores
+title: "🎸 Construcción de Acordes"
+description: "Acordes diatónicos completos para todas las escalas mayores en ukelele"
 ---
 
-# Construcción de Acordes
-
-[← Volver al índice principal](../README.md)
+[<- Volver al índice principal](../README.md)
 
 ---
 
@@ -90,7 +87,7 @@ Un acorde se forma tomando la **1ª, 3ª y 5ª** nota de una escala.
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 4. **F**: F - A - C **Mayor**
    - Entre F y A: 2 tonos (F - F#/Gb - G - G#/Ab - A) ✓
@@ -104,7 +101,7 @@ Un acorde se forma tomando la **1ª, 3ª y 5ª** nota de una escala.
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 5. **G**: G - B - D **Mayor**
    - Entre G y B: 2 tonos (G - G#/Ab - A - A#/Bb - B) ✓
@@ -118,7 +115,7 @@ Un acorde se forma tomando la **1ª, 3ª y 5ª** nota de una escala.
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 6. **Am**: A - C - E **Menor**
    - Entre A y C: 1 tono y 1 semitono (A - A#/Bb - B - C) ✓
@@ -132,7 +129,7 @@ Un acorde se forma tomando la **1ª, 3ª y 5ª** nota de una escala.
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 7. **B°**: B - D - F **Disminuido**
    - Entre B y D: 1 tono y 1 semitono (B - C - C#/Db - D) ✓
@@ -146,7 +143,7 @@ Un acorde se forma tomando la **1ª, 3ª y 5ª** nota de una escala.
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 **¿Por qué son diatónicos?**
 Todos estos acordes usan únicamente notas de la escala de C mayor, por eso suenan naturales y armónicos juntos. Son la base para componer en la tonalidad de C mayor.
@@ -169,7 +166,7 @@ Todos estos acordes usan únicamente notas de la escala de C mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 2. **Am**: A - C - E **Menor**
    - Entre A y C: 1 tono y 1 semitono (A - A#/Bb - B - C) ✓
@@ -183,7 +180,7 @@ Todos estos acordes usan únicamente notas de la escala de C mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 3. **Bm**: B - D - F# **Menor**
    - Entre B y D: 1 tono y 1 semitono (B - C - C#/Db - D) ✓
@@ -197,7 +194,7 @@ Todos estos acordes usan únicamente notas de la escala de C mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 4. **C**: C - E - G **Mayor**
    - Entre C y E: 2 tonos (C - C#/Db - D - D#/Eb - E) ✓
@@ -211,7 +208,7 @@ Todos estos acordes usan únicamente notas de la escala de C mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 5. **D**: D - F# - A **Mayor**
    - Entre D y F#: 2 tonos (D - D#/Eb - E - F - F#) ✓
@@ -225,7 +222,7 @@ Todos estos acordes usan únicamente notas de la escala de C mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 6. **Em**: E - G - B **Menor**
    - Entre E y G: 1 tono y 1 semitono (E - F - F# - G) ✓
@@ -239,7 +236,7 @@ Todos estos acordes usan únicamente notas de la escala de C mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 7. **F#°**: F# - A - C **Disminuido**
    - Entre F# y A: 1 tono y 1 semitono (F# - G - G#/Ab - A) ✓
@@ -253,7 +250,7 @@ Todos estos acordes usan únicamente notas de la escala de C mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 **¿Por qué son diatónicos?**
 Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suenan naturales y armónicos juntos. Son la base para componer en la tonalidad de G mayor.
@@ -276,7 +273,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 2. **Em**: E - G - B **Menor**
    - Entre E y G: 1 tono y 1 semitono (E - F - F# - G) ✓
@@ -290,7 +287,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 3. **F#m**: F# - A - C# **Menor**
    - Entre F# y A: 1 tono y 1 semitono (F# - G - G#/Ab - A) ✓
@@ -304,7 +301,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 4. **G**: G - B - D **Mayor**
    - Entre G y B: 2 tonos (G - G#/Ab - A - A#/Bb - B) ✓
@@ -318,7 +315,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 5. **A**: A - C# - E **Mayor**
    - Entre A y C#: 2 tonos (A - A#/Bb - B - C - C#) ✓
@@ -332,7 +329,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 6. **Bm**: B - D - F# **Menor**
    - Entre B y D: 1 tono y 1 semitono (B - C - C# - D) ✓
@@ -346,7 +343,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 7. **C#°**: C# - E - G **Disminuido**
    - Entre C# y E: 1 tono y 1 semitono (C# - D - D#/Eb - E) ✓
@@ -360,7 +357,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 ### A Mayor
 
@@ -380,7 +377,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 2. **Bm**: B - D - F# **Menor**
    - Entre B y D: 1 tono y 1 semitono (B - C - C# - D) ✓
@@ -394,7 +391,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 3. **C#m**: C# - E - G# **Menor**
    - Entre C# y E: 1 tono y 1 semitono (C# - D - D#/Eb - E) ✓
@@ -408,7 +405,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 4. **D**: D - F# - A **Mayor**
    - Entre D y F#: 2 tonos (D - D#/Eb - E - F - F#) ✓
@@ -422,7 +419,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 5. **E**: E - G# - B **Mayor**
    - Entre E y G#: 2 tonos (E - F - F# - G - G#) ✓
@@ -436,7 +433,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 6. **F#m**: F# - A - C# **Menor**
    - Entre F# y A: 1 tono y 1 semitono (F# - G - G# - A) ✓
@@ -450,7 +447,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 7. **G#°**: G# - B - D **Disminuido**
    - Entre G# y B: 1 tono y 1 semitono (G# - A - A#/Bb - B) ✓
@@ -464,7 +461,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 ### E Mayor
 
@@ -484,7 +481,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 2. **F#m**: F# - A - C# **Menor**
    - Entre F# y A: 1 tono y 1 semitono (F# - G - G# - A) ✓
@@ -498,7 +495,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 3. **G#m**: G# - B - D# **Menor**
    - Entre G# y B: 1 tono y 1 semitono (G# - A - A#/Bb - B) ✓
@@ -512,7 +509,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 4. **A**: A - C# - E **Mayor**
    - Entre A y C#: 2 tonos (A - A#/Bb - B - C - C#) ✓
@@ -526,7 +523,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 5. **B**: B - D# - F# **Mayor**
    - Entre B y D#: 2 tonos (B - C - C# - D - D#) ✓
@@ -540,7 +537,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 6. **C#m**: C# - E - G# **Menor**
    - Entre C# y E: 1 tono y 1 semitono (C# - D - D# - E) ✓
@@ -554,7 +551,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 7. **D#°**: D# - F# - A **Disminuido**
    - Entre D# y F#: 1 tono y 1 semitono (D# - E - F - F#) ✓
@@ -568,7 +565,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 ### B Mayor
 
@@ -588,7 +585,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 2. **C#m**: C# - E - G# **Menor**
    - Entre C# y E: 1 tono y 1 semitono (C# - D - D# - E) ✓
@@ -602,7 +599,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 3. **D#m**: D# - F# - A# **Menor**
    - Entre D# y F#: 1 tono y 1 semitono (D# - E - F - F#) ✓
@@ -616,7 +613,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 4. **E**: E - G# - B **Mayor**
    - Entre E y G#: 2 tonos (E - F - F# - G - G#) ✓
@@ -630,7 +627,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 5. **F#**: F# - A# - C# **Mayor**
    - Entre F# y A#: 2 tonos (F# - G - G# - A - A#) ✓
@@ -644,7 +641,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 6. **G#m**: G# - B - D# **Menor**
    - Entre G# y B: 1 tono y 1 semitono (G# - A - A# - B) ✓
@@ -658,7 +655,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 7. **A#°**: A# - C# - E **Disminuido**
    - Entre A# y C#: 1 tono y 1 semitono (A# - B - C - C#) ✓
@@ -672,7 +669,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 ### F Mayor
 
@@ -692,7 +689,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 2. **Gm**: G - Bb - D **Menor**
    - Entre G y Bb: 1 tono y 1 semitono (G - G#/Ab - A - Bb) ✓
@@ -706,7 +703,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 3. **Am**: A - C - E **Menor**
    - Entre A y C: 1 tono y 1 semitono (A - A#/Bb - B - C) ✓
@@ -720,7 +717,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 4. **Bb**: Bb - D - F **Mayor**
    - Entre Bb y D: 2 tonos (Bb - B - C - C#/Db - D) ✓
@@ -734,7 +731,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 5. **C**: C - E - G **Mayor**
    - Entre C y E: 2 tonos (C - C#/Db - D - D#/Eb - E) ✓
@@ -748,7 +745,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 6. **Dm**: D - F - A **Menor**
    - Entre D y F: 1 tono y 1 semitono (D - D#/Eb - E - F) ✓
@@ -762,7 +759,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 7. **E°**: E - G - Bb **Disminuido**
    - Entre E y G: 1 tono y 1 semitono (E - F - F#/Gb - G) ✓
@@ -776,7 +773,7 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
    G|---|---|---|---
    -0---1---2---3--- trastes
    ```
-   **Posición**: 0000
+   **Posición**:  próximamente
 
 ---
 
@@ -784,8 +781,8 @@ Todos estos acordes usan únicamente notas de la escala de G mayor, por eso suen
 
 - **🏠 Inicio**: [Teoría Musical para Ukelele](../README.md)
 - **📚 Teoría**:
-    - [Fundamentos](./fundamentos.md)
-    - [Escalas y Progresiones](./escalas.md)
+    - 🎯 [Fundamentos](./fundamentos.md)
+    - 🎼 [Escalas y Progresiones](./escalas.md)
 - **🎵 Canciones**: [Repertorio Completo](../canciones/README.md)
 
 ---

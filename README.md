@@ -1,6 +1,16 @@
-# 🎵 Teoría Musical para Ukelele
+# 🎵 Teoría Musical enfocada en Ukelele
 
-Página personal de Esteban Kroh con teoría musical aplicada al ukelele y con un repertorio de canciones.
+Una guía completa de teoría musical aplicada específicamente al ukelele, diseñada para músicos de todos los niveles. Este recurso combina fundamentos teóricos sólidos con aplicaciones prácticas, incluyendo un extenso repertorio de canciones con tablaturas y progresiones de acordes. Desde conceptos básicos como cifrado americano y lectura de partituras, hasta construcción de acordes complejos y progresiones avanzadas, todo adaptado para las características únicas del ukelele.
+
+---
+
+## 🔗 Navegación Rápida
+
+- **📚 Teoría**:
+    - 🎯 [Fundamentos](./teoria/fundamentos.md)
+    - 🎼 [Escalas y Progresiones](./teoria/escalas.md)
+    - 🎸 [Construcción de Acordes](./teoria/acordes.md)
+- **🎵 Canciones**: [Repertorio Completo](./canciones/README.md)
 
 ---
 
@@ -39,16 +49,8 @@ Página personal de Esteban Kroh con teoría musical aplicada al ukelele y con u
 - 🎼 Clásicos & Jazz
 - 🎭 Clásica & Instrumental
 - 🎤 Folk & Acústica
+- 🎄 Navideñas
 
 ---
 
-## 🔗 Navegación Rápida
-
-- **🚀 Para principiantes**: Empieza con [Fundamentos](./teoria/fundamentos.md)
-- **🎯 Para practicar**: Ve a [Escalas y Progresiones](./teoria/escalas.md)
-- **🎸 Para acordes**: Consulta [Construcción de Acordes](./teoria/acordes.md)
-- **🎵 Para tocar**: Explora el [Catálogo de Canciones](./canciones/README.md)
-
----
-
-*Combinando teoría musical universal con práctica específica del ukelele* 🎸
+*Combinando teoría musical universal con práctica específica del ukelele* 🎸 *Mantenido por Esteban Kroh*

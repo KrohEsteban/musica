@@ -1,18 +1,15 @@
 ---
-layout: default
-title: Canciones de Ukelele
-description: Repertorio completo de 30 canciones organizadas por géneros
+title: "🎵 Canciones de Ukelele"
+description: "Repertorio de canciones organizadas por géneros e identificadas por dificultad"
 ---
-
-# Canciones de Ukelele
 
 ## 🔗 Navegación
 
 - **🏠 Inicio**: [Teoría Musical para Ukelele](../README.md)
 - **📚 Teoría**:
-    - [Fundamentos](../teoria/fundamentos.md)
-    - [Escalas y Progresiones](../teoria/escalas.md)
-    - [Construcción de Acordes](../teoria/acordes.md)
+    - 🎯 [Fundamentos](../teoria/fundamentos.md)
+    - 🎼 [Escalas y Progresiones](../teoria/escalas.md)
+    - 🎸 [Construcción de Acordes](../teoria/acordes.md)
 
 ---
 
@@ -66,12 +63,13 @@ description: Repertorio completo de 30 canciones organizadas por géneros
 - [Clair de Lune](./Clair_de_Lune_TAB.pdf) - Claude Debussy **[Dificultad: 9/10]**
 - [Gnossienne No. 1](./Gnossienne_No._1_TAB.pdf) - Erik Satie **[Dificultad: 9/10]**
 
-### 🎄 **Navideñas**
-- [Have Yourself a Merry Little Christmas](./Have_Yourself_a_Merry_Little_Christmas_TAB.pdf) - Judy Garland **[Dificultad: 4/10]**
-
 ### 🎤 **Folk & Acústica**
 - [The Sound of Silence](./The_Sound_of_Silence_TAB.pdf) - Simon & Garfunkel **[Dificultad: 5/10]**
 - [Hallelujah](./Hallelujah_TAB.pdf) - Leonard Cohen **[Dificultad: 6/10]**
+
+### 🎄 **Navideñas**
+- [Have Yourself a Merry Little Christmas](./Have_Yourself_a_Merry_Little_Christmas_TAB.pdf) - Judy Garland **[Dificultad: 4/10]**
+
 
 ---
 
@@ -79,8 +77,6 @@ description: Repertorio completo de 30 canciones organizadas por géneros
 
 - **🏠 Inicio**: [Teoría Musical para Ukelele](../README.md)
 - **📚 Teoría**:
-    - [Fundamentos](../teoria/fundamentos.md)
-    - [Escalas y Progresiones](../teoria/escalas.md)
-    - [Construcción de Acordes](../teoria/acordes.md)
-
----
+    - 🎯 [Fundamentos](../teoria/fundamentos.md)
+    - 🎼 [Escalas y Progresiones](../teoria/escalas.md)
+    - 🎸 [Construcción de Acordes](../teoria/acordes.md)

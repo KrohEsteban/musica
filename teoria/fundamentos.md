@@ -1,6 +1,9 @@
-# Fundamentos de la Notación Musical
+---
+title: "🎯 Fundamentos de la Notación Musical"
+description: "Conceptos básicos, tablaturas y partituras aplicadas al ukelele"
+---
 
-[← Volver al índice principal](../README.md)
+[<- Volver al índice principal](../README.md)
 
 ---
 
@@ -75,11 +78,11 @@ Una **tablatura** (o "tab") es una forma de notación musical que muestra dónde
 
 ### **Sistema 1: Con números de trastes (recomendado para principiantes)**
 ```
-A|---|---|---|---|---  ← Cuerda A (la más aguda)
-E|---|---|---|---|---  ← Cuerda E
-C|---|---|---|---|---  ← Cuerda C
-G|---|-x-|---|---|---  ← Cuerda G (tocar)
--0---1---2---3---4---  ← Números de trastes
+A|---|---|---|---|--- <- Cuerda A (la más aguda)
+E|---|---|---|---|--- <- Cuerda E
+C|---|---|---|---|--- <- Cuerda C
+G|---|-x-|---|---|--- <- Cuerda G (tocar)
+-0---1---2---3---4--- <- Números de trastes
 ```
 
 **Explicación:**
@@ -90,10 +93,10 @@ G|---|-x-|---|---|---  ← Cuerda G (tocar)
 
 ### **Sistema 2: Sin números de trastes (sistema tradicional)**
 ```
-A|---|---|---  ← Cuerda A (la más aguda)
-E|---|---|---  ← Cuerda E
-C|---|---|---  ← Cuerda C
-G|---|-3-|---  ← Cuerda G en traste 3
+A|---|---|--- <- Cuerda A (la más aguda)
+E|---|---|--- <- Cuerda E
+C|---|---|--- <- Cuerda C
+G|---|-3-|--- <- Cuerda G en traste 3
 ```
 
 **Explicación:**
@@ -214,11 +217,11 @@ Una **partitura** es la notación musical estándar que representa la música de
 ## El Pentagrama
 
 ```
-─────────────  ← Línea 5 (superior)
-─────────────  ← Línea 4
-─────────────  ← Línea 3 (central)
-─────────────  ← Línea 2
-─────────────  ← Línea 1 (inferior)
+───────────── <- Línea 5 (superior)
+───────────── <- Línea 4
+───────────── <- Línea 3 (central)
+───────────── <- Línea 2
+───────────── <- Línea 1 (inferior)
 ```
 
 ---
@@ -229,21 +232,21 @@ Una **partitura** es la notación musical estándar que representa la música de
 
 ### **Clave de Sol (G)**
 ```
-─────────────  ← F (Fa)
-─────────────  ← D (Re)
-─────────────  ← B (Si)
-─────────────  ← G (Sol) ← Clave de Sol
-─────────────  ← E (Mi)
+───────────── <- F (Fa)
+───────────── <- D (Re)
+───────────── <- B (Si)
+───────────── <- G (Sol) <- Clave de Sol
+───────────── <- E (Mi)
 ```
 **La clave de Sol indica que la nota G (Sol) está en la línea 2**
 
 ### **Clave de Fa (F)**
 ```
-─────────────  ← A (La)
-─────────────  ← F (Fa) ← Clave de Fa
-─────────────  ← D (Re)
-─────────────  ← B (Si)
-─────────────  ← G (Sol)
+───────────── <- A (La)
+───────────── <- F (Fa) <- Clave de Fa
+───────────── <- D (Re)
+───────────── <- B (Si)
+───────────── <- G (Sol)
 ```
 **La clave de Fa indica que la nota F (Fa) está en la línea 4**
 
@@ -339,8 +342,8 @@ Esta imagen muestra claramente cómo se ven las diferentes notas y sus duracione
 
 - **🏠 Inicio**: [Teoría Musical para Ukelele](../README.md)
 - **📚 Teoría**:
-    - [Escalas y Progresiones](./escalas.md)
-    - [Construcción de Acordes](./acordes.md)
+    - 🎼 [Escalas y Progresiones](./escalas.md)
+    - 🎸 [Construcción de Acordes](./acordes.md)
 - **🎵 Canciones**: [Repertorio Completo](../canciones/README.md)
 
 ---

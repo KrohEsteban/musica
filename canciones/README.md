@@ -42,7 +42,7 @@ description: "Repertorio de canciones organizadas por géneros e identificadas p
 - [Estadio Azteca](./ESTADIO_AZTECA_Andres_Calamaro_Acordes.pdf) - Andrés Calamaro **[Dificultad: 5/10]**
 - [Silencio](./Silencio_Tab_por_Los_Tipitos-Ukulele_Tabs.pdf) - Los Tipitos **[Dificultad: 4/10]**
 - [Agua](./Agua_Tab_por_Jarabe_De_Palo_Ukulele_Tabs.pdf) - Jarabe de Palo **[Dificultad: 4/10]**
-- [El Fantasma](./Arbol-El_Fantasma.pdf) - Árbol **[Dificultad: 3/10]**
+- [El Fantasma](./El_Fantasma-Arbol.pdf) - Árbol **[Dificultad: 3/10]**
 
 ### 🎵 **Pop & Contemporánea**
 - [A Thousand Years](./A_Thousand_Years_TAB.pdf) - Christina Perri **[Dificultad: 4/10]**

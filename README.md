@@ -1,6 +1,6 @@
 # 🎵 Teoría Musical enfocada en Ukelele
 
-Una guía completa de teoría musical aplicada específicamente al ukelele, diseñada para músicos de todos los niveles. Este recurso combina fundamentos teóricos sólidos con aplicaciones prácticas, incluyendo un extenso repertorio de canciones con tablaturas y progresiones de acordes. Desde conceptos básicos como cifrado americano y lectura de partituras, hasta construcción de acordes complejos y progresiones avanzadas, todo adaptado para las características únicas del ukelele.
+Una guía completa de teoría musical aplicada específicamente al ukelele, diseñada para músicos de todos los niveles. Este recurso combina fundamentos teóricos sólidos con aplicaciones prácticas, incluyendo un extenso repertorio de canciones con tablaturas, partituras y progresiones de acordes. Desde conceptos básicos como cifrado americano, lectura de tablaturas y partituras, hasta construcción de acordes complejos y progresiones avanzadas, todo adaptado para las características únicas del ukelele.
 
 ---
 

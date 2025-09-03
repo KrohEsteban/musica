@@ -5,18 +5,19 @@ import Layout from '../../layouts/Layout.astro';
 <Layout title="🎸 Generador de Tabs (Ukelele)">
   <div class="generator-container">
     <h1>🎸 Generador de Tabs (Ukelele)</h1>
-    <p class="hint">Pegá la notación rápida y generá la tab ASCII para ukelele (A–E–C–G).</p>
+    <p class="hint">Pegá la notación rápida y generá la tab para ukelele (A–E–C–G).</p>
 
       <div class="card">
         <p class="hint"><strong>Reglas:</strong></p>
         <ul class="hint">
           <li>Columnas separadas por espacio (cada columna = 1 tiempo).</li>
-          <li>Notas: <code>G0</code>, <code>C2</code>, <code>E3</code>, <code>A10</code> &nbsp;|&nbsp; Silencios: <code>G-</code>, etc.</li>
+          <li>Notas: <code>G0</code>, <code>C2</code>, <code>E3</code>, <code>A10</code> &nbsp;|&nbsp; Silencios: <code>G-</code> o <code>-</code> o <code>Gx</code> o <code>Gmute</code>, etc.</li>
           <li>Acordes: unir con <code>+</code>, p.ej. <code>G0+E0</code>, <code>C2+E3+A3</code>.</li>
           <li>Salida en orden <strong>A, E, C, G</strong> con ancho por columna según el traste más largo.</li>
+          <li><strong>Múltiples líneas:</strong> Cada línea genera una tab separada.</li>
         </ul>
 
-        <textarea id="input" placeholder="Ej.:&#10;G0 C2 E0 E2 E3 E2 E0"></textarea>
+        <textarea id="input" placeholder="Ej.:&#10;G0 C2 E0 E2 E3 E2 E0&#10;A0 A2 Ax+Ex+Cx+Gx A3 A2 A0&#10;G0+E0 C2+E2 G0+E0"></textarea>
 
         <div class="row">
           <button id="btn-gen">Generar</button>
@@ -109,8 +110,9 @@ import Layout from '../../layouts/Layout.astro';
     white-space: pre;
     overflow: auto;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    line-height: 1.35;
+    line-height: 1.2;
     color: #333;
+    font-size: 0.9rem;
   }
 
   .toolbar {
@@ -151,16 +153,21 @@ import Layout from '../../layouts/Layout.astro';
       const $copy = $("btn-copy");
       const $dl = $("btn-download");
 
-      const SAMPLE = "G0 C2 E0 E2 E3 E2 E0";
+      const SAMPLE = "G0 C2 E0 E2 E3 E2 E0\n\nA0 A2 Ax+Ex+Cx+Gx A3 A2 A0\n\nG0+E0 C2+E2 G0+E0";
 
       function parseColumns(text) {
-        return text.trim()
-          .split(/\s+/)              // separa columnas por espacio
-          .filter(Boolean)
-          .map(col => col.split("+")  // acordes con '+'
-            .map(tok => tok.trim())
+        // Dividir por líneas primero
+        const lines = text.trim().split('\n');
+
+        return lines.map(line =>
+          line.trim()
+            .split(/\s+/)              // separa columnas por espacio
             .filter(Boolean)
-          );
+            .map(col => col.split("+")  // acordes con '+'
+              .map(tok => tok.trim())
+              .filter(Boolean)
+            )
+        );
       }
 
       function colWidth(tokens) {
@@ -174,31 +181,44 @@ import Layout from '../../layouts/Layout.astro';
         return maxLen;
       }
 
-      function renderTab(columns) {
-        const lines = Object.fromEntries(ORDER.map(s => [s, []]));
+      function renderTab(linesOfColumns) {
+        const result = [];
 
-        for (const colTokens of columns) {
-          const width = Math.max(1, colWidth(colTokens));
-          const cell = Object.fromEntries(ORDER.map(s => [s, "-".repeat(width)]));
-
-          for (const tok of colTokens) {
-            const m = tok.match(/^([GCEA])(.+)$/i);
-            if (!m) continue;
-            let [, s, fret] = m;
-            s = s.toUpperCase();
-            if (!STRINGS.has(s)) continue;
-            if (fret === "-") continue;
-
-            const text = String(fret);
-            const padLeft = Math.floor((width - text.length) / 2);
-            const padRight = width - text.length - padLeft;
-            cell[s] = "-".repeat(padLeft) + text + "-".repeat(padRight);
+        for (const columns of linesOfColumns) {
+          if (columns.length === 0) {
+            // Línea vacía
+            result.push('');
+            continue;
           }
 
-          for (const s of ORDER) (lines as any)[s].push(cell[s]);
+          const lines = Object.fromEntries(ORDER.map(s => [s, []]));
+
+          for (const colTokens of columns) {
+            const width = Math.max(1, colWidth(colTokens));
+            const cell = Object.fromEntries(ORDER.map(s => [s, "-".repeat(width)]));
+
+            for (const tok of colTokens) {
+              const m = tok.match(/^([GCEA])(.+)$/i);
+              if (!m) continue;
+              let [, s, fret] = m;
+              s = s.toUpperCase();
+              if (!STRINGS.has(s)) continue;
+              if (fret === "-") continue;
+
+              const text = String(fret);
+              const padLeft = Math.floor((width - text.length) / 2);
+              const padRight = width - text.length - padLeft;
+              cell[s] = "-".repeat(padLeft) + text + "-".repeat(padRight);
+            }
+
+            for (const s of ORDER) (lines as any)[s].push(cell[s]);
+          }
+
+                    // Agregar las 4 líneas de esta tab
+          result.push(...ORDER.map(s => `${s}|${(lines as any)[s].join("-")}|`));
         }
 
-        return ORDER.map(s => `${s}|${(lines as any)[s].join("-")}|`).join("\n");
+        return result.join("\n");
       }
 
       function generate() {
@@ -208,9 +228,11 @@ import Layout from '../../layouts/Layout.astro';
           if ($outbox) $outbox.hidden = true;
           return;
         }
+
         const cols = parseColumns(raw);
-        const tab = renderTab(cols);
-        if ($out) $out.textContent = tab;
+        const output = renderTab(cols);
+
+        if ($out) $out.textContent = output;
         if ($outbox) $outbox.hidden = false;
       }
 

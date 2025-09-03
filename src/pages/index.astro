@@ -1,0 +1,200 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="🎵 Teoría Musical enfocada en Ukelele">
+    <div class="hero">
+    <h1>🎵 Mi Guía Personal de Ukelele</h1>
+    <p class="hero-subtitle">Anotaciones, teoría y canciones que he recopilado en mi aprendizaje</p>
+
+    <div class="hero-image">
+      <img src="/musica/img/ukeleles.png" alt="Colección de ukeleles de colores" />
+    </div>
+
+    <div class="personal-intro">
+      <p class="intro-text">
+        Hola! 👋 Soy Esteban y esta es mi colección personal de anotaciones sobre teoría musical aplicada al ukelele.
+        Empecé a tocar ukelele hace un tiempo y me di cuenta de que necesitaba organizar toda la información
+        que iba aprendiendo. Así que decidí crear esta guía para no perder nada y, de paso, compartirla con
+        cualquiera que esté en la misma situación.
+      </p>
+
+      <p class="intro-text">
+        Aquí encontrarás desde los conceptos más básicos hasta canciones completas con tablaturas.
+        Todo está organizado de manera que puedas ir paso a paso, o saltar directamente a lo que te interese.
+        Espero que te sea útil tanto como lo ha sido para mí! 🎸
+      </p>
+    </div>
+  </div>
+
+  <div class="content-sections">
+    <div class="section-intro">
+      <h2>¿Qué encontrarás aquí?</h2>
+      <p>Esta guía está dividida en dos partes principales: teoría musical y repertorio de canciones. Todo pensado específicamente para el ukelele.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📚</div>
+        <h3>Teoría Musical</h3>
+        <p>Fundamentos, escalas, acordes y todo lo que necesitas saber para entender la música que tocas.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎵</div>
+        <h3>Repertorio de Canciones</h3>
+        <p>Más de 30 canciones organizadas por género y dificultad, con tablaturas y acordes.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Enfoque Práctico</h3>
+        <p>Todo adaptado específicamente para ukelele, sin información innecesaria.</p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  .hero-image {
+    margin: 2rem 0;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+  }
+
+  .hero-image img:hover {
+    transform: scale(1.02);
+  }
+
+  .personal-intro {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #495057;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .content-sections {
+    margin-top: 3rem;
+  }
+
+  .section-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-intro h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+
+  .section-intro p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+
+  .feature-card p {
+    color: #6c757d;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+
+    .intro-text {
+      font-size: 1rem;
+    }
+
+    .section-intro h2 {
+      font-size: 1.5rem;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      padding: 1.5rem;
+    }
+  }
+</style>

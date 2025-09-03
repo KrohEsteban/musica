@@ -1,0 +1,203 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Datos de las canciones
+const canciones = {
+  "videogames": [
+    { nombre: "Last of Us - Main Theme", archivo: "Last_of_Us_TAB.pdf", dificultad: 6, artista: "Videojuego" },
+    { nombre: "One Summer's Day", archivo: "One_Summer's_Day_TAB.pdf", dificultad: 7, artista: "El Viaje de Chihiro" },
+    { nombre: "City of Stars", archivo: "City_of_Stars.pdf", dificultad: 5, artista: "La La Land" }
+  ],
+  "rock": [
+    { nombre: "Under the Bridge", archivo: "Under_the_Bridge_TAB.pdf", dificultad: 7, artista: "Red Hot Chili Peppers" },
+    { nombre: "Where Is My Mind", archivo: "Where_Is_My_Mind_TAB.pdf", dificultad: 6, artista: "Pixies" },
+    { nombre: "No Surprises", archivo: "No_Surprises_TAB.pdf", dificultad: 5, artista: "Radiohead" },
+    { nombre: "Wake Me Up When September Ends", archivo: "Wake_Me_Up_When_September_Ends_TAB.pdf", dificultad: 4, artista: "Green Day" },
+    { nombre: "Fix You", archivo: "Fix_You_TAB.pdf", dificultad: 3, artista: "Coldplay" },
+    { nombre: "Chasing Cars", archivo: "Chasing_Cars_TAB.pdf", dificultad: 3, artista: "Snow Patrol" },
+    { nombre: "Someone You Loved", archivo: "Someone_You_Loved_TAB.pdf", dificultad: 4, artista: "Lewis Capaldi" },
+    { nombre: "Estadio Azteca", archivo: "Estadio_Azteca-Andres_Calamaro.md", dificultad: 5, artista: "Andrés Calamaro" },
+    { nombre: "Silencio", archivo: "Silencio_Tab_por_Los_Tipitos-Ukulele_Tabs.pdf", dificultad: 4, artista: "Los Tipitos" },
+    { nombre: "Agua", archivo: "Agua_Tab_por_Jarabe_De_Palo_Ukulele_Tabs.pdf", dificultad: 4, artista: "Jarabe de Palo" },
+    { nombre: "El Fantasma", archivo: "El_Fantasma-Arbol.md", dificultad: 3, artista: "Árbol" }
+  ],
+  "pop": [
+    { nombre: "A Thousand Years", archivo: "A_Thousand_Years_TAB.pdf", dificultad: 4, artista: "Christina Perri" },
+    { nombre: "Bang Bang", archivo: "Bang_Bang_TAB.pdf", dificultad: 6, artista: "Nancy Sinatra" },
+    { nombre: "True Colours", archivo: "True_Colours_TAB.pdf", dificultad: 2, artista: "Cyndi Lauper" },
+    { nombre: "Time After Time", archivo: "Time_After_Time_TAB.pdf", dificultad: 3, artista: "Cyndi Lauper" },
+    { nombre: "Hoppipolla", archivo: "Hoppipolla_TAB.pdf", dificultad: 8, artista: "Sigur Rós" },
+    { nombre: "Juntos A La Par", archivo: "Juntos_A_La_Par_Papo_TAB.pdf", dificultad: 5, artista: "Papo" },
+    { nombre: "Tu Misterioso Alguien", archivo: "Tu_Misterioso_Alguien_TAB.pdf", dificultad: 4, artista: "Miranda!" }
+  ],
+  "clasicos": [
+    { nombre: "Blackbird", archivo: "Blackbird_TAB.pdf", dificultad: 8, artista: "The Beatles" },
+    { nombre: "Georgia on My Mind", archivo: "Georgia_on_My_Mind_TAB.pdf", dificultad: 7, artista: "Ray Charles" },
+    { nombre: "Beyond the Sea", archivo: "Beyond_the_Sea_TAB.pdf", dificultad: 6, artista: "Bobby Darin" },
+    { nombre: "Both Sides Now", archivo: "Both_Sides_Now_TAB.pdf", dificultad: 5, artista: "Joni Mitchell" },
+    { nombre: "Ain't No Sunshine", archivo: "Aint_no_Sunshine_TAB.pdf", dificultad: 4, artista: "Bill Withers" }
+  ],
+  "instrumental": [
+    { nombre: "Clair de Lune", archivo: "Clair_de_Lune_TAB.pdf", dificultad: 9, artista: "Claude Debussy" },
+    { nombre: "Gnossienne No. 1", archivo: "Gnossienne_No._1_TAB.pdf", dificultad: 9, artista: "Erik Satie" }
+  ],
+  "folk": [
+    { nombre: "The Sound of Silence", archivo: "The_Sound_of_Silence_TAB.pdf", dificultad: 5, artista: "Simon & Garfunkel" },
+    { nombre: "Hallelujah", archivo: "Hallelujah_TAB.pdf", dificultad: 6, artista: "Leonard Cohen" }
+  ],
+  "navidenas": [
+    { nombre: "Have Yourself a Merry Little Christmas", archivo: "Have_Yourself_a_Merry_Little_Christmas_TAB.pdf", dificultad: 4, artista: "Judy Garland" }
+  ]
+};
+
+function getDifficultyClass(dificultad: number): string {
+  if (dificultad <= 2) return "beginner";
+  if (dificultad <= 6) return "intermediate";
+  return "advanced";
+}
+
+function getDifficultyText(dificultad: number): string {
+  if (dificultad <= 2) return "Principiante";
+  if (dificultad <= 4) return "Principiante-Intermedio";
+  if (dificultad <= 6) return "Intermedio";
+  if (dificultad <= 8) return "Intermedio-Avanzado";
+  return "Avanzado";
+}
+---
+
+<Layout title="🎵 Canciones de Ukelele">
+  <h1>🎵 Canciones de Ukelele</h1>
+
+  <p><a href="/musica/">← Volver al índice principal</a></p>
+
+  <hr />
+
+  <h2>📊 Guía de Dificultades</h2>
+
+  <p><strong>Escala de 1 a 10:</strong></p>
+  <ul>
+    <li><strong>1-2</strong>: Principiante (acordes básicos, ritmo simple)</li>
+    <li><strong>3-4</strong>: Principiante-Intermedio (cambios de acordes más fluidos)</li>
+    <li><strong>5-6</strong>: Intermedio (acordes con cejilla, ritmos complejos)</li>
+    <li><strong>7-8</strong>: Intermedio-Avanzado (técnicas especiales, fingerpicking)</li>
+    <li><strong>9-10</strong>: Avanzado (composiciones complejas, técnicas virtuosas)</li>
+  </ul>
+
+  <hr />
+
+  <h2>🎵 Índice de Canciones</h2>
+
+  <h3>🎮 Videogames & Soundtracks</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0;">
+    {canciones.videogames.map(cancion => (
+      <div class="card">
+        <h4>
+          <a href={`/musica/canciones/${cancion.archivo}`}>{cancion.nombre}</a>
+          <span class={`difficulty ${getDifficultyClass(cancion.dificultad)}`}>
+            {cancion.dificultad}/10
+          </span>
+        </h4>
+        <p><strong>{cancion.artista}</strong></p>
+        <p><em>{getDifficultyText(cancion.dificultad)}</em></p>
+      </div>
+    ))}
+  </div>
+
+  <h3>🎸 Rock & Alternative</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0;">
+    {canciones.rock.map(cancion => (
+      <div class="card">
+        <h4>
+          <a href={`/musica/canciones/${cancion.archivo}`}>{cancion.nombre}</a>
+          <span class={`difficulty ${getDifficultyClass(cancion.dificultad)}`}>
+            {cancion.dificultad}/10
+          </span>
+        </h4>
+        <p><strong>{cancion.artista}</strong></p>
+        <p><em>{getDifficultyText(cancion.dificultad)}</em></p>
+      </div>
+    ))}
+  </div>
+
+  <h3>🎵 Pop & Contemporánea</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0;">
+    {canciones.pop.map(cancion => (
+      <div class="card">
+        <h4>
+          <a href={`/musica/canciones/${cancion.archivo}`}>{cancion.nombre}</a>
+          <span class={`difficulty ${getDifficultyClass(cancion.dificultad)}`}>
+            {cancion.dificultad}/10
+          </span>
+        </h4>
+        <p><strong>{cancion.artista}</strong></p>
+        <p><em>{getDifficultyText(cancion.dificultad)}</em></p>
+      </div>
+    ))}
+  </div>
+
+  <h3>🎼 Clásicos & Jazz</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0;">
+    {canciones.clasicos.map(cancion => (
+      <div class="card">
+        <h4>
+          <a href={`/musica/canciones/${cancion.archivo}`}>{cancion.nombre}</a>
+          <span class={`difficulty ${getDifficultyClass(cancion.dificultad)}`}>
+            {cancion.dificultad}/10
+          </span>
+        </h4>
+        <p><strong>{cancion.artista}</strong></p>
+        <p><em>{getDifficultyText(cancion.dificultad)}</em></p>
+      </div>
+    ))}
+  </div>
+
+  <h3>🎭 Clásica & Instrumental</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0;">
+    {canciones.instrumental.map(cancion => (
+      <div class="card">
+        <h4>
+          <a href={`/musica/canciones/${cancion.archivo}`}>{cancion.nombre}</a>
+          <span class={`difficulty ${getDifficultyClass(cancion.dificultad)}`}>
+            {cancion.dificultad}/10
+          </span>
+        </h4>
+        <p><strong>{cancion.artista}</strong></p>
+        <p><em>{getDifficultyText(cancion.dificultad)}</em></p>
+      </div>
+    ))}
+  </div>
+
+  <h3>🎤 Folk & Acústica</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0;">
+    {canciones.folk.map(cancion => (
+      <div class="card">
+        <h4>
+          <a href={`/musica/canciones/${cancion.archivo}`}>{cancion.nombre}</a>
+          <span class={`difficulty ${getDifficultyClass(cancion.dificultad)}`}>
+            {cancion.dificultad}/10
+          </span>
+        </h4>
+        <p><strong>{cancion.artista}</strong></p>
+        <p><em>{getDifficultyText(cancion.dificultad)}</em></p>
+      </div>
+    ))}
+  </div>
+
+  <h3>🎄 Navideñas</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0;">
+    {canciones.navidenas.map(cancion => (
+      <div class="card">
+        <h4>
+          <a href={`/musica/canciones/${cancion.archivo}`}>{cancion.nombre}</a>
+          <span class={`difficulty ${getDifficultyClass(cancion.dificultad)}`}>
+            {cancion.dificultad}/10
+          </span>
+        </h4>
+        <p><strong>{cancion.artista}</strong></p>
+        <p><em>{getDifficultyText(cancion.dificultad)}</em></p>
+      </div>
+    ))}
+  </div>
+
+
+</Layout>

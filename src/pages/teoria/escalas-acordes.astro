@@ -1,0 +1,589 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="🎼 Escalas, Acordes y Progresiones">
+  <h1>🎼 Escalas, Acordes y Progresiones</h1>
+
+  <hr />
+
+  <h2>Contenido</h2>
+
+  <h3>Escalas</h3>
+  <ul>
+    <li><a href="#estructura-de-la-escala-mayor">Estructura de la Escala Mayor</a></li>
+    <li><a href="#ejemplos-de-escalas-mayores">Ejemplos de Escalas Mayores</a></li>
+    <li><a href="#patrones-de-escala-mayor-en-ukelele">Patrones de Escala Mayor - Ukelele</a></li>
+    <li><a href="#estructura-de-la-escala-menor">Estructura de la Escala Menor</a></li>
+    <li><a href="#ejemplos-de-escalas-menores">Ejemplos de Escalas Menores</a></li>
+
+  </ul>
+
+  <h3>Acordes</h3>
+  <ul>
+    <li><a href="#construccion-de-acordes">Construcción de Acordes</a></li>
+    <li><a href="#acordes-diatonicos">Acordes Diatónicos</a></li>
+  </ul>
+
+  <h3>Progresiones</h3>
+  <ul>
+    <li><a href="#grados-de-acordes">Grados de los Acordes</a></li>
+    <li><a href="#progresiones-de-acordes-comunes">Progresiones de Acordes Comunes</a></li>
+    <li><a href="#funciones-tonales">Funciones Tonales</a></li>
+  </ul>
+
+  <hr />
+
+  <h2 id="escalas">ESCALAS</h2>
+
+  <h3 id="estructura-de-la-escala-mayor">Estructura de la Escala Mayor</h3>
+
+  <p><strong>Fórmula de intervalos:</strong><br>
+  T = tono (2 semitonos)<br>
+  ST = semitono (1 nota)</p>
+
+  <pre><code>T - T - ST - T - T - T - ST</code></pre>
+
+  <hr />
+
+  <h3 id="ejemplos-de-escalas-mayores">Ejemplos de Escalas Mayores</h3>
+
+  <p><strong>Escalas en diferentes tonalidades:</strong></p>
+  <ul>
+    <li><strong>C</strong>: C  - D  - E  - F  - G  - A  - B  - C</li>
+    <li><strong>G</strong>: G  - A  - B  - C  - D  - E  - F# - G</li>
+    <li><strong>D</strong>: D  - E  - F# - G  - A  - B  - C# - D</li>
+    <li><strong>A</strong>: A  - B  - C# - D  - E  - F# - G# - A</li>
+    <li><strong>E</strong>: E  - F# - G# - A  - B  - C# - D# - E</li>
+    <li><strong>B</strong>: B  - C# - D# - E  - F# - G# - A# - B</li>
+    <li><strong>F</strong>: F  - G  - A  - Bb - C  - D  - E  - F</li>
+  </ul>
+
+  <hr />
+
+  <h3 id="patrones-de-escala-mayor-en-ukelele">Patrones de Escala Mayor en Ukelele</h3>
+
+  <p><strong>Nota</strong>: Esta sección muestra cómo tocar las notas individuales de la escala mayor en el ukelele. En la siguiente sección verás cómo construir acordes completos usando estas notas.</p>
+
+  <div class="fretboard-reference">
+    <h4><strong>Referencia del Diapasón del Ukelele</strong></h4>
+    <p>Esta imagen te ayudará a ubicar todas las notas en el ukelele:</p>
+    <img src="/musica/img/ukelele-notas.png" alt="Diapasón del ukelele con todas las notas marcadas" style="width: 100%; max-width: 600px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
+    <p><em>Diapasón completo del ukelele mostrando todas las notas en cada traste</em></p>
+  </div>
+
+  <h4><strong>Primera posición (C# Mayor):</strong></h4>
+  <pre><code>A|-x-|---|-x-|-x-|---
+E|-x-|-x-|---|-x-|---
+C|-x-|---|-x-|---|---
+G|---|---|---|---|---
+-0---1---2---4---5--- trastes</code></pre>
+
+  <h4><strong>Segunda posición (C# Mayor):</strong></h4>
+  <pre><code>A|---|-x-|-x-|---|---
+E|-x-|---|-x-|-x-|---
+C|---|-x-|---|-x-|---
+G|---|---|---|-x-|---
+-2---3---4---5---6--- trastes</code></pre>
+
+  <hr />
+
+  <h3 id="estructura-de-la-escala-menor">Estructura de la Escala Menor</h3>
+
+  <p><strong>Fórmula de intervalos:</strong><br>
+  T = tono (2 semitonos)<br>
+  ST = semitono (1 nota)</p>
+
+  <pre><code>T - ST - T - T - ST - T - T</code></pre>
+
+  <p><strong>Diferencia con la escala mayor:</strong><br>
+  La escala menor tiene el 3er, 6to y 7mo grado un semitono más bajo que la escala mayor.</p>
+
+  <hr />
+
+  <h3 id="ejemplos-de-escalas-menores">Ejemplos de Escalas Menores</h3>
+
+  <p><strong>Escalas menores en diferentes tonalidades:</strong></p>
+  <ul>
+    <li><strong>Am</strong>: A  - B  - C  - D  - E  - F  - G  - A</li>
+    <li><strong>Em</strong>: E  - F# - G  - A  - B  - C  - D  - E</li>
+    <li><strong>Bm</strong>: B  - C# - D  - E  - F# - G  - A  - B</li>
+    <li><strong>F#m</strong>: F# - G# - A  - B  - C# - D  - E  - F#</li>
+    <li><strong>C#m</strong>: C# - D# - E  - F# - G# - A  - B  - C#</li>
+    <li><strong>G#m</strong>: G# - A# - B  - C# - D# - E  - F# - G#</li>
+    <li><strong>Dm</strong>: D  - E  - F  - G  - A  - Bb - C  - D</li>
+  </ul>
+
+  <hr />
+
+  <h2 id="acordes">ACORDES</h2>
+
+  <div class="chords-reference">
+    <h4><strong>Referencia de Acordes del Ukelele</strong></h4>
+    <p>Esta imagen te servirá como guía rápida para todos los acordes básicos del ukelele:</p>
+    <img src="/musica/img/ukelele-acordes.png" alt="Tabla completa de acordes del ukelele" style="width: 100%; max-width: 800px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
+    <p><em>Tabla completa de acordes del ukelele con posiciones de dedos y tipos de acordes</em></p>
+  </div>
+
+  <h3 id="construccion-de-acordes">Construcción de Acordes</h3>
+
+  <p>Un acorde se forma tomando la <strong>1ª, 3ª y 5ª</strong> nota de una escala.</p>
+
+  <p><strong>Para identificar el tipo de acorde:</strong></p>
+  <ul>
+    <li><strong>Acorde Mayor</strong>: Entre la 1ª y la 3ª hay <strong>2 tonos</strong>, entre la 3ª y la 5ª hay <strong>1 tono y 1 semitono</strong></li>
+    <li><strong>Acorde Menor</strong>: Entre la 1ª y la 3ª hay <strong>1 tono y 1 semitono</strong>, entre la 3ª y la 5ª hay <strong>2 tonos</strong></li>
+    <li><strong>Acorde Disminuido</strong>: Entre la 1ª y la 3ª hay <strong>1 tono y 1 semitono</strong>, entre la 3ª y la 5ª hay <strong>1 tono y 1 semitono</strong></li>
+  </ul>
+
+  <h3 id="acordes-diatonicos">Acordes Diatónicos</h3>
+
+  <p>Los <strong>acordes diatónicos</strong> son acordes que se construyen usando <strong>SOLO las notas de una escala específica</strong>, sin agregar notas extrañas. Son "naturales" en esa tonalidad y suenan bien juntos.</p>
+
+  <h4><strong>Acordes Diatónicos en C Mayor</strong></h4>
+
+  <p><strong>Escala de C Mayor</strong>: C - D - E - F - G - A - B - C</p>
+
+  <div class="chord-card">
+    <h5>1. <strong>C</strong>: C - E - G <strong>Mayor</strong></h5>
+    <ul>
+      <li>Entre C y E: 2 tonos (C - C#/Db - D - D#/Eb - E) ✓</li>
+      <li>Entre E y G: 1 tono y 1 semitono (E - F - F#/Gb - G) ✓</li>
+    </ul>
+  </div>
+
+  <div class="chord-card">
+    <h5>2. <strong>Dm</strong>: D - F - A <strong>Menor</strong></h5>
+    <ul>
+      <li>Entre D y F: 1 tono y 1 semitono (D - D#/Eb - E - F) ✓</li>
+      <li>Entre F y A: 2 tonos (F - F#/Gb - G - G#/Ab - A) ✓</li>
+    </ul>
+  </div>
+
+  <div class="chord-card">
+    <h5>3. <strong>Em</strong>: E - G - B <strong>Menor</strong></h5>
+    <ul>
+      <li>Entre E y G: 1 tono y 1 semitono (E - F - F#/Gb - G) ✓</li>
+      <li>Entre G y B: 2 tonos (G - G#/Ab - A - A#/Bb - B) ✓</li>
+    </ul>
+  </div>
+
+  <div class="chord-card">
+    <h5>4. <strong>F</strong>: F - A - C <strong>Mayor</strong></h5>
+    <ul>
+      <li>Entre F y A: 2 tonos (F - F#/Gb - G - G#/Ab - A) ✓</li>
+      <li>Entre A y C: 1 tono y 1 semitono (A - A#/Bb - B - C) ✓</li>
+    </ul>
+  </div>
+
+  <div class="chord-card">
+    <h5>5. <strong>G</strong>: G - B - D <strong>Mayor</strong></h5>
+    <ul>
+      <li>Entre G y B: 2 tonos (G - G#/Ab - A - A#/Bb - B) ✓</li>
+      <li>Entre B y D: 1 tono y 1 semitono (B - C - C#/Db - D) ✓</li>
+    </ul>
+  </div>
+
+  <div class="chord-card">
+    <h5>6. <strong>Am</strong>: A - C - E <strong>Menor</strong></h5>
+    <ul>
+      <li>Entre A y C: 1 tono y 1 semitono (A - A#/Bb - B - C) ✓</li>
+      <li>Entre C y E: 2 tonos (C - C#/Db - D - D#/Eb - E) ✓</li>
+    </ul>
+  </div>
+
+  <div class="chord-card">
+    <h5>7. <strong>B°</strong>: B - D - F <strong>Disminuido</strong></h5>
+    <ul>
+      <li>Entre B y D: 1 tono y 1 semitono (B - C - C#/Db - D) ✓</li>
+      <li>Entre D y F: 1 tono y 1 semitono (D - D#/Eb - E - F) ✓</li>
+    </ul>
+  </div>
+
+  <p><strong>¿Por qué son diatónicos?</strong><br>
+  Todos estos acordes usan únicamente notas de la escala de C mayor, por eso suenan naturales y armónicos juntos. Son la base para componer en la tonalidad de C mayor.</p>
+
+  <h4><strong>Acordes Diatónicos en Am (La Menor)</strong></h4>
+
+  <p><strong>Escala de Am</strong>: A - B - C - D - E - F - G - A</p>
+
+  <div class="chord-card">
+    <h5>1. <strong>Am</strong>: A - C - E <strong>Menor</strong></h5>
+    <ul>
+      <li>Entre A y C: 1 tono y 1 semitono (A - A#/Bb - B - C) ✓</li>
+      <li>Entre C y E: 2 tonos (C - C#/Db - D - D#/Eb - E) ✓</li>
+    </ul>
+  </div>
+
+  <div class="chord-card">
+    <h5>2. <strong>B°</strong>: B - D - F <strong>Disminuido</strong></h5>
+    <ul>
+      <li>Entre B y D: 1 tono y 1 semitono (B - C - C#/Db - D) ✓</li>
+      <li>Entre D y F: 1 tono y 1 semitono (D - D#/Eb - E - F) ✓</li>
+    </ul>
+  </div>
+
+  <div class="chord-card">
+    <h5>3. <strong>C</strong>: C - E - G <strong>Mayor</strong></h5>
+    <ul>
+      <li>Entre C y E: 2 tonos (C - C#/Db - D - D#/Eb - E) ✓</li>
+      <li>Entre E y G: 1 tono y 1 semitono (E - F - F#/Gb - G) ✓</li>
+    </ul>
+  </div>
+
+  <div class="chord-card">
+    <h5>4. <strong>Dm</strong>: D - F - A <strong>Menor</strong></h5>
+    <ul>
+      <li>Entre D y F: 1 tono y 1 semitono (D - D#/Eb - E - F) ✓</li>
+      <li>Entre F y A: 2 tonos (F - F#/Gb - G - G#/Ab - A) ✓</li>
+    </ul>
+  </div>
+
+  <div class="chord-card">
+    <h5>5. <strong>Em</strong>: E - G - B <strong>Menor</strong></h5>
+    <ul>
+      <li>Entre E y G: 1 tono y 1 semitono (E - F - F#/Gb - G) ✓</li>
+      <li>Entre G y B: 2 tonos (G - G#/Ab - A - A#/Bb - B) ✓</li>
+    </ul>
+  </div>
+
+  <div class="chord-card">
+    <h5>6. <strong>F</strong>: F - A - C <strong>Mayor</strong></h5>
+    <ul>
+      <li>Entre F y A: 2 tonos (F - F#/Gb - G - G#/Ab - A) ✓</li>
+      <li>Entre A y C: 1 tono y 1 semitono (A - A#/Bb - B - C) ✓</li>
+    </ul>
+  </div>
+
+  <div class="chord-card">
+    <h5>7. <strong>G</strong>: G - B - D <strong>Mayor</strong></h5>
+    <ul>
+      <li>Entre G y B: 2 tonos (G - G#/Ab - A - A#/Bb - B) ✓</li>
+      <li>Entre B y D: 1 tono y 1 semitono (B - C - C#/Db - D) ✓</li>
+    </ul>
+  </div>
+
+  <p><strong>¿Por qué son diatónicos?</strong><br>
+  Todos estos acordes usan únicamente notas de la escala de Am, por eso suenan naturales y armónicos juntos. Son la base para componer en la tonalidad de Am.</p>
+
+  <p><strong>Nota importante:</strong> La escala menor natural (Am) comparte los mismos acordes que su relativa mayor (C Mayor), pero en diferente orden. Am es la relativa menor de C Mayor.</p>
+
+  <hr />
+
+  <h2 id="progresiones">PROGRESIONES</h2>
+
+  <h3 id="grados-de-acordes">Grados de los Acordes</h3>
+
+  <p>En música, usamos <strong>grados</strong> (números romanos) para referirnos a los acordes según su posición en la escala:</p>
+
+
+
+  <div class="degrees-example">
+    <h4><strong>En C Mayor:</strong></h4>
+    <ul>
+      <li><strong>I</strong> = C (1ª nota de la escala)</li>
+      <li><strong>ii</strong> = Dm (2ª nota de la escala)</li>
+      <li><strong>iii</strong> = Em (3ª nota de la escala)</li>
+      <li><strong>IV</strong> = F (4ª nota de la escala)</li>
+      <li><strong>V</strong> = G (5ª nota de la escala)</li>
+      <li><strong>vi</strong> = Am (6ª nota de la escala)</li>
+      <li><strong>vii°</strong> = B° (7ª nota de la escala)</li>
+    </ul>
+  </div>
+
+  <p><strong>¿Por qué grados?</strong><br>
+  - Los <strong>grados en mayúscula (I, IV, V)</strong> representan acordes <strong>mayores</strong><br>
+  - Los <strong>grados en minúscula (ii, iii, vi)</strong> representan acordes <strong>menores</strong><br>
+  - El <strong>símbolo ° (vii°)</strong> representa acordes <strong>disminuidos</strong></p>
+
+  <h3 id="progresiones-de-acordes-comunes">Progresiones de Acordes Comunes</h3>
+
+  <h4><strong>Progresión I - IV - V - I (C - F - G - C)</strong></h4>
+  <p>La progresión más común en música popular y tradicional. Para entender mejor por qué funciona, consulta la sección de <a href="#funciones-tonales">Funciones Tonales</a>.</p>
+
+  <p><strong>Ejemplo en C Mayor</strong>: C → F → G → C</p>
+
+  <p><strong>Progresión I-IV-V-I en diferentes tonalidades:</strong></p>
+  <ul>
+    <li><strong>C Mayor</strong>: C - F - G - C</li>
+    <li><strong>D Mayor</strong>: D - G - A - D</li>
+    <li><strong>E Mayor</strong>: E - A - B - E</li>
+    <li><strong>F Mayor</strong>: F - Bb - C - F</li>
+    <li><strong>G Mayor</strong>: G - C - D - G</li>
+    <li><strong>A Mayor</strong>: A - D - E - A</li>
+    <li><strong>B Mayor</strong>: B - E - F# - B</li>
+  </ul>
+
+  <p><strong>Consejo</strong>: Practica la misma progresión en diferentes tonalidades para desarrollar tu oído musical y flexibilidad en el instrumento.</p>
+
+  <hr />
+
+  <h3 id="funciones-tonales">Funciones Tonales</h3>
+
+  <p>Las <strong>funciones tonales</strong> explican el papel que juega cada acorde dentro de una tonalidad. Entender estas funciones te ayudará a:</p>
+  <ul>
+    <li>Comprender por qué ciertas progresiones suenan bien</li>
+    <li>Crear tus propias progresiones de acordes</li>
+    <li>Improvisar y componer con más confianza</li>
+    <li>Entender la "gramática" de la música</li>
+  </ul>
+
+  <h4><strong>Las Tres Funciones Principales</strong></h4>
+
+  <div class="function-card">
+    <h5>🎯 <strong>Tónica (I)</strong></h5>
+    <p><strong>Función</strong>: Centro tonal, sensación de reposo y estabilidad</p>
+    <p><strong>Características</strong>:</p>
+    <ul>
+      <li>Es el "hogar" de la tonalidad</li>
+      <li>Proporciona sensación de llegada y descanso</li>
+      <li>Se usa al inicio y final de muchas canciones</li>
+      <li>En C mayor: <strong>C</strong> (C-E-G)</li>
+    </ul>
+  </div>
+
+  <div class="function-card">
+    <h5>🌊 <strong>Subdominante (IV)</strong></h5>
+    <p><strong>Función</strong>: Tensión media, se aleja del centro tonal</p>
+    <p><strong>Características</strong>:</p>
+    <ul>
+      <li>Crea movimiento y tensión moderada</li>
+      <li>Se aleja del centro tonal sin ser demasiado tenso</li>
+      <li>Funciona bien como "puente" entre tónica y dominante</li>
+      <li>En C mayor: <strong>F</strong> (F-A-C)</li>
+    </ul>
+  </div>
+
+  <div class="function-card">
+    <h5>⚡ <strong>Dominante (V)</strong></h5>
+    <p><strong>Función</strong>: Tensión alta, "pide" resolución hacia la tónica</p>
+    <p><strong>Características</strong>:</p>
+    <ul>
+      <li>Crea la máxima tensión en la tonalidad</li>
+      <li>"Pide" resolución hacia la tónica</li>
+      <li>Es el acorde más importante después de la tónica</li>
+      <li>En C mayor: <strong>G</strong> (G-B-D)</li>
+    </ul>
+  </div>
+
+  <h4><strong>Funciones Secundarias</strong></h4>
+
+  <div class="function-card">
+    <h5>🌿 <strong>Subdominante Secundaria (ii)</strong></h5>
+    <p><strong>Función</strong>: Similar a IV pero más suave y melódica</p>
+    <p><strong>Características</strong>:</p>
+    <ul>
+      <li>Proporciona tensión suave</li>
+      <li>Se usa en progresiones más complejas</li>
+      <li>En C mayor: <strong>Dm</strong> (D-F-A)</li>
+    </ul>
+  </div>
+
+  <div class="function-card">
+    <h5>🌙 <strong>Relativa Menor (vi)</strong></h5>
+    <p><strong>Función</strong>: Acorde menor que comparte las mismas notas que la tónica mayor</p>
+    <p><strong>Características</strong>:</p>
+    <ul>
+      <li>Proporciona tensión suave y melódica</li>
+      <li>Se usa en progresiones emotivas</li>
+      <li>En C mayor: <strong>Am</strong> (A-C-E) - relativa menor de C</li>
+    </ul>
+  </div>
+
+  <h4><strong>Progresiones Comunes y sus Funciones</strong></h4>
+
+  <div class="progression-example">
+    <h5><strong>Progresión I - IV - V - I (C - F - G - C)</strong></h5>
+    <p><strong>Funciones</strong>: Tónica → Subdominante → Dominante → Tónica</p>
+    <p><strong>Efecto</strong>: Reposo → Tensión media → Tensión alta → Resolución</p>
+    <p><strong>¿Por qué funciona?</strong> Crea un ciclo perfecto de tensión y resolución que es natural para el oído humano.</p>
+  </div>
+
+  <div class="progression-example">
+    <h5><strong>Progresión I - vi - IV - V (C - Am - F - G)</strong></h5>
+    <p><strong>Funciones</strong>: Tónica → Relativa menor → Subdominante → Dominante</p>
+    <p><strong>Efecto</strong>: Reposo → Tensión suave → Tensión media → Tensión alta</p>
+    <p><strong>¿Por qué funciona?</strong> Progresión muy melódica y emotiva, muy común en pop y rock.</p>
+  </div>
+
+  <div class="progression-example">
+    <h5><strong>Progresión ii - V - I (Dm - G - C)</strong></h5>
+    <p><strong>Funciones</strong>: Subdominante secundaria → Dominante → Tónica</p>
+    <p><strong>Efecto</strong>: Tensión suave → Tensión alta → Resolución</p>
+    <p><strong>¿Por qué funciona?</strong> Progresión muy elegante, común en jazz y música clásica.</p>
+  </div>
+
+
+
+
+
+</Layout>
+
+<style>
+  .chord-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-left: 4px solid #28a745;
+  }
+
+  .chord-card h5 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .chord-card ul {
+    margin-bottom: 0;
+  }
+
+  .fretboard-reference {
+    background: #e8f4fd;
+    border: 1px solid #bee5eb;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid #17a2b8;
+    text-align: center;
+  }
+
+  .fretboard-reference h4 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .fretboard-reference p {
+    margin-bottom: 1rem;
+  }
+
+  .fretboard-reference p:last-child {
+    margin-bottom: 0;
+    font-style: italic;
+    color: #6c757d;
+  }
+
+  .chords-reference {
+    background: #f0f8ff;
+    border: 1px solid #b3d9ff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid #0066cc;
+    text-align: center;
+  }
+
+  .chords-reference h4 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .chords-reference p {
+    margin-bottom: 1rem;
+  }
+
+  .chords-reference p:last-child {
+    margin-bottom: 0;
+    font-style: italic;
+    color: #6c757d;
+  }
+
+  .degrees-example {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-left: 4px solid #f39c12;
+  }
+
+  .degrees-example h4 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .degrees-example ul {
+    margin-bottom: 0;
+  }
+
+  .function-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-left: 4px solid #667eea;
+  }
+
+  .function-card h5 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .function-card p {
+    margin-bottom: 0.5rem;
+  }
+
+  .function-card ul {
+    margin-bottom: 0;
+  }
+
+  .progression-example {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  }
+
+  .progression-example h5 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .progression-example p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+  }
+
+  .progression-example p:last-child {
+    margin-bottom: 0;
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    .chord-card {
+      padding: 1rem;
+    }
+
+    .fretboard-reference {
+      padding: 1rem;
+    }
+
+    .chords-reference {
+      padding: 1rem;
+    }
+
+    .degrees-example {
+      padding: 1rem;
+    }
+
+    .function-card {
+      padding: 1rem;
+    }
+
+    .progression-example {
+      padding: 1rem;
+    }
+  }
+</style>

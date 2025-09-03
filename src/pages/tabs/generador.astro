@@ -1,0 +1,259 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="🎸 Generador de Tabs (Ukelele)">
+  <div class="generator-container">
+    <h1>🎸 Generador de Tabs (Ukelele)</h1>
+    <p class="hint">Pegá la notación rápida y generá la tab ASCII para ukelele (A–E–C–G).</p>
+
+      <div class="card">
+        <p class="hint"><strong>Reglas:</strong></p>
+        <ul class="hint">
+          <li>Columnas separadas por espacio (cada columna = 1 tiempo).</li>
+          <li>Notas: <code>G0</code>, <code>C2</code>, <code>E3</code>, <code>A10</code> &nbsp;|&nbsp; Silencios: <code>G-</code>, etc.</li>
+          <li>Acordes: unir con <code>+</code>, p.ej. <code>G0+E0</code>, <code>C2+E3+A3</code>.</li>
+          <li>Salida en orden <strong>A, E, C, G</strong> con ancho por columna según el traste más largo.</li>
+        </ul>
+
+        <textarea id="input" placeholder="Ej.:&#10;G0 C2 E0 E2 E3 E2 E0"></textarea>
+
+        <div class="row">
+          <button id="btn-gen">Generar</button>
+          <button id="btn-sample">Cargar ejemplo</button>
+        </div>
+
+        <div class="output" id="outbox" hidden>
+          <pre id="output"></pre>
+          <div class="toolbar">
+            <button id="btn-copy">Copiar</button>
+            <button id="btn-download">Descargar .txt</button>
+          </div>
+        </div>
+      </div>
+  </div>
+</Layout>
+
+<style>
+  .generator-container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 16px 48px;
+  }
+
+  .generator-container h1 {
+    font-size: 1.6rem;
+    margin: 0 0 8px;
+  }
+
+  .generator-container .hint {
+    color: #666;
+    margin: 0 0 16px;
+    font-size: .9rem;
+  }
+
+  .card {
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 16px;
+    background: #f8f9fa;
+    margin: 1rem 0;
+  }
+
+  .card textarea {
+    width: calc(100% - 24px);
+    min-height: 140px;
+    resize: vertical;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    background: white;
+    color: #333;
+    padding: 12px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    line-height: 1.35;
+    box-sizing: border-box;
+  }
+
+  .row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 12px 0 8px;
+  }
+
+  .card button {
+    background: transparent;
+    color: #333;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+
+  .card button:hover {
+    border-color: #3498db;
+  }
+
+  .output {
+    position: relative;
+    margin-top: 12px;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    background: white;
+    padding: 12px;
+  }
+
+  .output pre {
+    margin: 0;
+    white-space: pre;
+    overflow: auto;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    line-height: 1.35;
+    color: #333;
+  }
+
+  .toolbar {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+
+  .card code {
+    background: #f1f3f4;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 2px 6px;
+    color: #333;
+  }
+
+  .card ul {
+    margin: 0 0 12px 1.2rem;
+  }
+
+  .card ul li {
+    color: #666;
+  }
+</style>
+
+<script>
+      // Orden de impresión (A, E, C, G)
+      const ORDER = ["A","E","C","G"];
+      const STRINGS = new Set(["G","C","E","A"]);
+
+      const $ = (id) => document.getElementById(id);
+      const $input = $("input");
+      const $gen = $("btn-gen");
+      const $sample = $("btn-sample");
+      const $outbox = $("outbox");
+      const $out = $("output");
+      const $copy = $("btn-copy");
+      const $dl = $("btn-download");
+
+      const SAMPLE = "G0 C2 E0 E2 E3 E2 E0";
+
+      function parseColumns(text) {
+        return text.trim()
+          .split(/\s+/)              // separa columnas por espacio
+          .filter(Boolean)
+          .map(col => col.split("+")  // acordes con '+'
+            .map(tok => tok.trim())
+            .filter(Boolean)
+          );
+      }
+
+      function colWidth(tokens) {
+        let maxLen = 1;
+        for (const t of tokens) {
+          const m = t.match(/^([GCEA])(.+)$/i);
+          if (!m) continue;
+          const fret = m[2];
+          if (fret !== "-") maxLen = Math.max(maxLen, String(fret).length);
+        }
+        return maxLen;
+      }
+
+      function renderTab(columns) {
+        const lines = Object.fromEntries(ORDER.map(s => [s, []]));
+
+        for (const colTokens of columns) {
+          const width = Math.max(1, colWidth(colTokens));
+          const cell = Object.fromEntries(ORDER.map(s => [s, "-".repeat(width)]));
+
+          for (const tok of colTokens) {
+            const m = tok.match(/^([GCEA])(.+)$/i);
+            if (!m) continue;
+            let [, s, fret] = m;
+            s = s.toUpperCase();
+            if (!STRINGS.has(s)) continue;
+            if (fret === "-") continue;
+
+            const text = String(fret);
+            const padLeft = Math.floor((width - text.length) / 2);
+            const padRight = width - text.length - padLeft;
+            cell[s] = "-".repeat(padLeft) + text + "-".repeat(padRight);
+          }
+
+          for (const s of ORDER) (lines as any)[s].push(cell[s]);
+        }
+
+        return ORDER.map(s => `${s}|${(lines as any)[s].join("-")}|`).join("\n");
+      }
+
+      function generate() {
+        if (!$input) return;
+        const raw = ($input as HTMLTextAreaElement).value;
+        if (!raw.trim()) {
+          if ($outbox) $outbox.hidden = true;
+          return;
+        }
+        const cols = parseColumns(raw);
+        const tab = renderTab(cols);
+        if ($out) $out.textContent = tab;
+        if ($outbox) $outbox.hidden = false;
+      }
+
+      function copyOut() {
+        if (!$out) return;
+        const txt = $out.textContent || "";
+        if (!txt) return;
+        navigator.clipboard.writeText(txt).then(() => {
+          if (!$copy) return;
+          const prev = $copy.textContent;
+          $copy.textContent = "¡Copiado!";
+          setTimeout(() => {
+            if ($copy) $copy.textContent = prev;
+          }, 800);
+        });
+      }
+
+      function downloadOut() {
+        if (!$out) return;
+        const txt = $out.textContent || "";
+        if (!txt) return;
+        const blob = new Blob([txt], { type: "text/plain;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url; a.download = "ukulele-tab.txt";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      }
+
+      if ($gen) $gen.addEventListener("click", generate);
+      if ($sample) $sample.addEventListener("click", () => {
+        if ($input) {
+          ($input as HTMLTextAreaElement).value = SAMPLE;
+          generate();
+        }
+      });
+      if ($copy) $copy.addEventListener("click", copyOut);
+      if ($dl) $dl.addEventListener("click", downloadOut);
+
+      // Autogenerar si ya hay texto (p.ej. hot-reload)
+      if ($input && ($input as HTMLTextAreaElement).value.trim()) generate();
+    </script>
+  </body>
+</html>

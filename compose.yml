@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - "4321:4321"
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+
+  cli:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./:/app
+      - /app/node_modules

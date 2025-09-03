@@ -1,0 +1,24 @@
+{
+  "name": "teoria-musical-ukelele",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Guía completa de teoría musical aplicada específicamente al ukelele",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.9.1"
+  },
+  "keywords": [
+    "musica",
+    "ukelele",
+    "teoria-musical",
+    "acordes",
+    "escalas"
+  ],
+  "author": "Esteban Kroh",
+  "license": "MIT"
+}

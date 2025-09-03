@@ -1,0 +1,491 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="🎯 Fundamentos de la Notación Musical">
+  <h1>🎯 Fundamentos de la Notación Musical</h1>
+
+  <hr />
+
+  <h2>Contenido</h2>
+
+  <h3>Fundamentos Básicos</h3>
+  <ul>
+    <li><a href="#cifrado-americano">Cifrado Americano</a></li>
+    <li><a href="#grados-de-la-escala">Grados de la Escala</a></li>
+    <li><a href="#escala-cromatica">Escala Cromática</a></li>
+  </ul>
+
+  <h3>Tablaturas</h3>
+  <ul>
+    <li><a href="#que-es-una-tablatura">¿Qué es una Tablatura?</a></li>
+    <li><a href="#estructura-de-tablaturas">Estructura de Tablaturas</a></li>
+    <li><a href="#ejemplos-de-lectura-de-tablaturas">Ejemplos de Lectura de Tablaturas</a></li>
+    <li><a href="#tecnicas-avanzadas-en-tablaturas">Técnicas Avanzadas en Tablaturas</a></li>
+    <li><a href="#ventajas-y-limitaciones-de-tablaturas">Ventajas y Limitaciones de Tablaturas</a></li>
+  </ul>
+
+  <h3>Partituras</h3>
+  <ul>
+    <li><a href="#que-es-una-partitura">¿Qué es una Partitura?</a></li>
+    <li><a href="#el-pentagrama">El Pentagrama</a></li>
+    <li><a href="#claves-musicales">Claves Musicales</a></li>
+    <li><a href="#correspondencia-partitura-ukelele">Correspondencia: Partitura ↔ Ukelele</a></li>
+    <li><a href="#duracion-de-las-notas">Duración de las Notas</a></li>
+    <li><a href="#silencios-musicales">Silencios Musicales</a></li>
+    <li><a href="#visualizacion-de-notas-y-tiempos">Visualización de Notas y Tiempos</a></li>
+    <li><a href="#simbolos-adicionales">Símbolos Adicionales</a></li>
+  </ul>
+
+  <hr />
+
+  <h2 id="fundamentos-basicos">FUNDAMENTOS BÁSICOS</h2>
+
+  <h3 id="cifrado-americano">Cifrado Americano</h3>
+
+  <p>El <strong>cifrado americano</strong> es una forma de nombrar las notas musicales usando letras:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nota</th>
+        <th>Do</th>
+        <th>Re</th>
+        <th>Mi</th>
+        <th>Fa</th>
+        <th>Sol</th>
+        <th>La</th>
+        <th>Si</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Letra</strong></td>
+        <td>C</td>
+        <td>D</td>
+        <td>E</td>
+        <td>F</td>
+        <td>G</td>
+        <td>A</td>
+        <td>B</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr />
+
+  <h3 id="grados-de-la-escala">Grados de la Escala</h3>
+
+  <p><strong>Grados de la escala mayor (en C):</strong></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Grado</th>
+        <th>I</th>
+        <th>II</th>
+        <th>III</th>
+        <th>IV</th>
+        <th>V</th>
+        <th>VI</th>
+        <th>VII</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Nota</strong></td>
+        <td>C</td>
+        <td>D</td>
+        <td>E</td>
+        <td>F</td>
+        <td>G</td>
+        <td>A</td>
+        <td>B</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr />
+
+  <h3 id="escala-cromatica">Escala Cromática</h3>
+
+  <p><strong>Todas las notas musicales (incluyendo sostenidos y bemoles):</strong></p>
+  <pre><code>C - C#/Db - D - D#/Eb - E - F - F#/Gb - G - G#/Ab - A - A#/Bb - B - C</code></pre>
+
+  <hr />
+
+  <h2 id="tablaturas">TABLATURAS</h2>
+
+  <h3 id="que-es-una-tablatura">¿Qué es una Tablatura?</h3>
+
+  <p>Una <strong>tablatura</strong> (o "tab") es una forma de notación musical que muestra dónde colocar los dedos en el instrumento. Es especialmente útil para instrumentos de cuerda como el ukelele, ya que indica exactamente qué cuerda tocar y en qué traste.</p>
+
+  <p><strong>Importante</strong>: Existen dos sistemas principales de notación de tablaturas. En este documento usaremos principalmente el <strong>Sistema 1</strong> (con números de trastes abajo), que es más claro para principiantes.</p>
+
+  <hr />
+
+  <h3 id="estructura-de-tablaturas">Estructura de Tablaturas</h3>
+
+  <h4><strong>Sistema 1: Con números de trastes (recomendado para principiantes)</strong></h4>
+  <pre><code>A|---|---|---|---|--- <- Cuerda A (la más aguda)
+E|---|---|---|---|--- <- Cuerda E
+C|---|---|---|---|--- <- Cuerda C
+G|---|-x-|---|---|--- <- Cuerda G (tocar)
+-0---1---2---3---4--- <- Números de trastes</code></pre>
+
+  <p><strong>Explicación:</strong></p>
+  <ul>
+    <li><strong>Líneas horizontales</strong>: Representan las 4 cuerdas del ukelele</li>
+    <li><strong>X</strong>: Significa "tocar esta cuerda"</li>
+    <li><strong>Números abajo</strong>: Indican en qué traste presionar la cuerda marcada con X</li>
+    <li><strong>0</strong>: Significa traste numero 0 o "cuerda al aire" (sin presionar)</li>
+  </ul>
+
+  <h4><strong>Sistema 2: Sin números de trastes (sistema tradicional)</strong></h4>
+  <pre><code>A|---|---|--- <- Cuerda A (la más aguda)
+E|---|---|--- <- Cuerda E
+C|---|---|--- <- Cuerda C
+G|---|-3-|--- <- Cuerda G en traste 3</code></pre>
+
+  <p><strong>Explicación:</strong></p>
+  <ul>
+    <li><strong>Líneas horizontales</strong>: Representan las 4 cuerdas del ukelele</li>
+    <li><strong>Números en las líneas</strong>: Indican directamente el traste donde presionar</li>
+    <li><strong>Sin numero</strong>: Significa "cuerda al aire" (sin presionar)</li>
+  </ul>
+
+  <hr />
+
+  <h3 id="ejemplos-de-lectura-de-tablaturas">Ejemplos de Lectura de Tablaturas</h3>
+
+  <h4><strong>Nota Individual (Sistema 1)</strong></h4>
+  <pre><code>A|---|---|---|---|---
+E|---|---|---|---|---
+C|---|---|---|---|---
+G|---|-x-|---|---|---
+-0---1---2---3---4---</code></pre>
+  <p><strong>Resultado</strong>: Toca la cuerda G en el traste 3</p>
+
+  <h4><strong>Nota Individual (Sistema 2)</strong></h4>
+  <pre><code>A|---|---|---
+E|---|-4-|---
+C|---|---|---
+G|---|---|---</code></pre>
+  <p><strong>Resultado</strong>: Toca la cuerda E en el traste 4</p>
+
+  <h4><strong>Acorde Completo (Sistema 1)</strong></h4>
+  <pre><code>A|---|---|-x-|---|---
+E|---|---|---|---|---
+C|---|---|---|---|---
+G|---|---|---|---|---
+-0---1---2---3---4---</code></pre>
+  <p><strong>Resultado</strong>: Acorde C mayor (C - E - G) - tocar todas las cuerdas en los trastes indicados</p>
+
+  <h4><strong>Acorde Completo (Sistema 2)</strong></h4>
+  <pre><code>A|---|-3-|---
+E|---|-0-|---
+C|---|-0-|---
+G|---|-0-|---</code></pre>
+  <p><strong>Resultado</strong>: Acorde C mayor (C - E - G) - cada número indica el traste de cada cuerda</p>
+
+  <hr />
+
+  <h3 id="tecnicas-avanzadas-en-tablaturas">Técnicas Avanzadas en Tablaturas</h3>
+
+  <h4><strong>Hammer-on (h)</strong></h4>
+  <pre><code>A|---|-2h4-|---</code></pre>
+  <ul>
+    <li>Toca la nota en el traste 2</li>
+    <li>Sin levantar el dedo, golpea el traste 4</li>
+    <li>Crea un efecto de "martilleo" ascendente</li>
+  </ul>
+
+  <h4><strong>Pull-off (p)</strong></h4>
+  <pre><code>A|---|-4p2-|---</code></pre>
+  <ul>
+    <li>Toca la nota en el traste 4</li>
+    <li>Sin levantar el dedo, tira hacia abajo para sonar el traste 2</li>
+    <li>Crea un efecto de "tirón" descendente</li>
+  </ul>
+
+  <h4><strong>Slide (/)</strong></h4>
+  <pre><code>A|---|-2/4-|---</code></pre>
+  <ul>
+    <li>Toca la nota en el traste 2</li>
+    <li>Sin levantar el dedo, desliza hacia el traste 4</li>
+    <li>Crea un efecto de "deslizamiento" ascendente</li>
+  </ul>
+
+  <h4><strong>Bend (b)</strong></h4>
+  <pre><code>A|---|-2b-|---</code></pre>
+  <ul>
+    <li>Toca la nota en el traste 2</li>
+    <li>Sin levantar el dedo, dobla la cuerda hacia arriba</li>
+    <li>Crea un efecto de "flexión" que sube el tono</li>
+  </ul>
+
+  <hr />
+
+  <h3 id="ventajas-y-limitaciones-de-tablaturas">Ventajas y Limitaciones de Tablaturas</h3>
+
+  <h4><strong>✅ Ventajas:</strong></h4>
+  <ul>
+    <li><strong>Fácil de aprender</strong> para principiantes</li>
+    <li><strong>Indica exactamente</strong> dónde colocar los dedos</li>
+    <li><strong>No requiere</strong> conocimientos de teoría musical</li>
+    <li><strong>Visualmente claro</strong> para instrumentos de cuerda</li>
+    <li><strong>Ideal para canciones</strong> específicas del instrumento</li>
+  </ul>
+
+  <h4><strong>❌ Limitaciones:</strong></h4>
+  <ul>
+    <li><strong>No indica ritmo</strong> (a menos que se especifique)</li>
+    <li><strong>No muestra la duración</strong> de las notas</li>
+    <li><strong>Limitado a un instrumento</strong> específico</li>
+    <li><strong>No incluye dinámicas</strong> (forte, piano, etc.)</li>
+    <li><strong>Puede ser confuso</strong> con técnicas avanzadas</li>
+  </ul>
+
+  <hr />
+
+  <h2 id="partituras">PARTITURAS</h2>
+
+  <h3 id="que-es-una-partitura">¿Qué es una Partitura?</h3>
+
+  <p>Una <strong>partitura</strong> es la notación musical estándar que representa la música de forma universal. A diferencia de las tablaturas, las partituras muestran:</p>
+  <ul>
+    <li><strong>Altura de las notas</strong> (qué nota tocar)</li>
+    <li><strong>Duración de las notas</strong> (cuánto tiempo sostener)</li>
+    <li><strong>Ritmo y tempo</strong> (cómo y a qué velocidad tocar)</li>
+    <li><strong>Dinámica</strong> (fuerte, suave, crescendo, etc.)</li>
+  </ul>
+
+  <hr />
+
+  <h3 id="el-pentagrama">El Pentagrama</h3>
+
+  <pre><code>───────────── <- Línea 5 (superior)
+───────────── <- Línea 4
+───────────── <- Línea 3 (central)
+───────────── <- Línea 2
+───────────── <- Línea 1 (inferior)</code></pre>
+
+  <hr />
+
+  <h3 id="claves-musicales">Claves Musicales</h3>
+
+  <img src="/musica/img/partituras_claves_sol_y_fa.png" alt="Ejemplo de claves de Sol y Fa" />
+
+  <h4><strong>Clave de Sol (G)</strong></h4>
+  <pre><code>───────────── <- F (Fa)
+───────────── <- D (Re)
+───────────── <- B (Si)
+───────────── <- G (Sol) <- Clave de Sol
+───────────── <- E (Mi)</code></pre>
+  <p><strong>La clave de Sol indica que la nota G (Sol) está en la línea 2</strong></p>
+
+  <h4><strong>Clave de Fa (F)</strong></h4>
+  <pre><code>───────────── <- A (La)
+───────────── <- F (Fa) <- Clave de Fa
+───────────── <- D (Re)
+───────────── <- B (Si)
+───────────── <- G (Sol)</code></pre>
+  <p><strong>La clave de Fa indica que la nota F (Fa) está en la línea 4</strong></p>
+
+  <hr />
+
+  <h3 id="correspondencia-partitura-ukelele">Correspondencia: Partitura ↔ Ukelele</h3>
+
+  <h4><strong>Afinación High G (GCEA) - Estándar</strong></h4>
+  <p>Esta tabla muestra la conversión para ukelele con afinación estándar High G:</p>
+
+  <img src="/musica/img/partitura_notas_high_G.png" alt="Partitura to Ukulele Tabs - High G" />
+
+  <h4><strong>Afinación Low G (GCEA) - Alternativa</strong></h4>
+  <p>Esta tabla muestra la conversión para ukelele con afinación Low G:</p>
+
+  <img src="/musica/img/partitura_notas_low_G.png" alt="Partitura to Ukulele Tabs - Low G" />
+
+  <p><strong>Explicación de las tablas:</strong></p>
+  <ul>
+    <li><strong>Notas naturales</strong> (C, D, E, F, G, A, B): Posiciones en trastes específicos</li>
+    <li><strong>Notas alteradas</strong> (C#/Db, D#/Eb, F#/Gb, G#/Ab, A#/Bb): Posiciones con sostenidos y bemoles</li>
+    <li><strong>Números</strong>: Indican el traste donde presionar cada cuerda</li>
+  </ul>
+
+  <p><strong>¿Cuál usar?</strong></p>
+
+  <p>La principal diferencia entre ukelele de afinación high-G y low-G radica en la nota de la cuarta cuerda, la más grave. En la afinación estándar (high-G), la cuarta cuerda es un sol agudo (G4), mientras que en la afinación low-G, esa misma cuerda se afina una octava más grave (G3), creando un sonido más profundo y amplio.</p>
+  <ul>
+    <li><strong>High G</strong>: Afinación estándar, más común en ukeleles</li>
+    <li><strong>Low G</strong>: Afinación alternativa, proporciona más rango grave</li>
+  </ul>
+
+  <hr />
+
+  <h3 id="duracion-de-las-notas">Duración de las Notas</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nota</th>
+        <th>Descripción del Símbolo</th>
+        <th>Duración</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Redonda</strong></td>
+        <td>Círculo blanco sin palo</td>
+        <td>4 tiempos</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><strong>Blanca</strong></td>
+        <td>Círculo blanco con palo</td>
+        <td>2 tiempos</td>
+        <td>1/2</td>
+      </tr>
+      <tr>
+        <td><strong>Negra</strong></td>
+        <td>Círculo negro relleno con palo</td>
+        <td>1 tiempo</td>
+        <td>1/4</td>
+      </tr>
+      <tr>
+        <td><strong>Corchea</strong></td>
+        <td>Círculo negro con palo y una bandera</td>
+        <td>1/2 tiempo</td>
+        <td>1/8</td>
+      </tr>
+      <tr>
+        <td><strong>Semicorchea</strong></td>
+        <td>Círculo negro con palo y dos banderas</td>
+        <td>1/4 tiempo</td>
+        <td>1/16</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr />
+
+  <h3 id="silencios-musicales">Silencios Musicales</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Silencio</th>
+        <th>Descripción del Símbolo</th>
+        <th>Duración</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Silencio de Redonda</strong></td>
+        <td>Rectángulo negro colgando de la 4ª línea</td>
+        <td>4 tiempos</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td><strong>Silencio de Blanca</strong></td>
+        <td>Rectángulo negro sentado en la 3ª línea</td>
+        <td>2 tiempos</td>
+        <td>1/2</td>
+      </tr>
+      <tr>
+        <td><strong>Silencio de Negra</strong></td>
+        <td>Símbolo similar a una "Z" estilizada</td>
+        <td>1 tiempo</td>
+        <td>1/4</td>
+      </tr>
+      <tr>
+        <td><strong>Silencio de Corchea</strong></td>
+        <td>Línea diagonal con una bandera</td>
+        <td>1/2 tiempo</td>
+        <td>1/8</td>
+      </tr>
+      <tr>
+        <td><strong>Silencio de Semicorchea</strong></td>
+        <td>Línea diagonal con dos banderas</td>
+        <td>1/4 tiempo</td>
+        <td>1/16</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr />
+
+  <h3 id="visualizacion-de-notas-y-tiempos">Visualización de Notas y Tiempos</h3>
+
+  <p>Esta imagen muestra claramente cómo se ven las diferentes notas y sus duraciones:</p>
+
+  <img src="/musica/img/partitura_tiempos.png" alt="Notas y Tiempos" />
+
+  <p><strong>Explicación de la imagen:</strong></p>
+  <ul>
+    <li><strong>Pentagrama superior</strong>: Muestra las notas musicales con sus símbolos visuales</li>
+    <li><strong>Pentagrama inferior</strong>: Muestra los silencios correspondientes a cada nota</li>
+    <li><strong>Fracciones</strong>: Indican la duración relativa de cada nota (1, 1/2, 1/4, 1/8, 1/16, 1/32, 1/64)</li>
+    <li><strong>Progresión</strong>: Desde la redonda (1 tiempo completo) hasta la sesentaicuatra (1/64 de tiempo)</li>
+    <li><strong>Relación</strong>: Cada nota tiene su silencio correspondiente con la misma duración</li>
+  </ul>
+
+  <hr />
+
+  <h3 id="simbolos-adicionales">Símbolos Adicionales</h3>
+
+  <h4><strong>Alteraciones</strong></h4>
+  <ul>
+    <li><strong>Sostenido (#)</strong>: Sube la nota medio tono</li>
+    <li><strong>Bemol (♭)</strong>: Baja la nota medio tono</li>
+    <li><strong>Becuadro (♮)</strong>: Cancela la alteración anterior</li>
+  </ul>
+
+  <h4><strong>Signos de Repetición</strong></h4>
+  <ul>
+    <li><strong>Barra de repetición</strong>: ║: :║</li>
+    <li><strong>Da Capo (D.C.)</strong>: Volver al inicio</li>
+    <li><strong>Dal Segno (D.S.)</strong>: Volver al signo</li>
+  </ul>
+
+  <h4><strong>Dinámica</strong></h4>
+  <ul>
+    <li><strong>p</strong>: Piano (suave)</li>
+    <li><strong>f</strong>: Forte (fuerte)</li>
+    <li><strong>mp</strong>: Mezzo-piano (medio suave)</li>
+    <li><strong>mf</strong>: Mezzo-forte (medio fuerte)</li>
+    <li><strong>cresc.</strong>: Crescendo (aumentar volumen)</li>
+    <li><strong>dim.</strong>: Diminuendo (disminuir volumen)</li>
+  </ul>
+
+</Layout>
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+</style>

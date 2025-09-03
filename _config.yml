@@ -1,6 +1,0 @@
-title: Teoría Musical - Ukelele
-description: Página web sobre teoría musical aplicada al ukelele y con un repertorio de canciones.
-url: https://esteban-kroh.github.io/musica/
-remote_theme: pages-themes/cayman@v0.2.0
-plugins:
-  - jekyll-remote-theme

@@ -24,7 +24,7 @@ const { title, description = "Guía completa de teoría musical aplicada especí
         <a href="/musica/teoria/fundamentos">🎯 Fundamentos</a>
         <a href="/musica/teoria/escalas-acordes">🎼 Escalas, Acordes y Progresiones</a>
         <a href="/musica/canciones/">🎵 Canciones</a>
-        <a href="/musica/tabs/generador">🎸 Generador de Tabs</a>
+        <a href="/musica/tabs/generador" class="generator-btn">🎸 Generador de Tabs</a>
       </nav>
     </header>
     <main>
@@ -32,7 +32,7 @@ const { title, description = "Guía completa de teoría musical aplicada especí
     </main>
     <footer>
       <p>Combinando teoría musical universal con práctica específica del ukelele 🎸</p>
-      <p>Mantenido por <a href="https://github.com/KrohEsteban">Esteban Kroh</a></p>
+      <p>Mantenido por <a href="https://krohesteban.github.io/">Esteban Kroh</a></p>
     </footer>
   </body>
 
@@ -81,6 +81,21 @@ const { title, description = "Guía completa de teoría musical aplicada especí
 
   nav a:hover {
     background-color: rgba(255,255,255,0.2);
+  }
+
+  /* Estilos especiales para el botón del generador */
+  nav a.generator-btn {
+    background: linear-gradient(135deg, #970404, #9c6807);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  nav a.generator-btn:hover {
+    background: linear-gradient(135deg, #ff5252, #ff9800);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
   }
 
 

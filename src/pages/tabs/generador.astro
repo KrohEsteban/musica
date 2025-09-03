@@ -5,7 +5,7 @@ import Layout from '../../layouts/Layout.astro';
 <Layout title="🎸 Generador de Tabs (Ukelele)">
   <div class="generator-container">
     <h1>🎸 Generador de Tabs (Ukelele)</h1>
-    <p class="hint">Pegá la notación rápida y generá la tab para ukelele (A–E–C–G).</p>
+    <p class="hint">Convierte entre notación rápida y tablatura para ukelele (A–E–C–G).</p>
 
       <div class="card">
         <p class="hint"><strong>Reglas:</strong></p>
@@ -29,6 +29,34 @@ import Layout from '../../layouts/Layout.astro';
           <div class="toolbar">
             <button id="btn-copy">Copiar</button>
             <button id="btn-download">Descargar .txt</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Segundo generador: Tablatura a Notación Rápida -->
+      <div class="card">
+        <h2>🔄 Tablatura → Notación Rápida</h2>
+        <p class="hint">Pegá una tablatura y convertila a notación rápida.</p>
+
+        <p class="hint"><strong>Formato de entrada:</strong></p>
+        <ul class="hint">
+          <li>Pegá la tablatura completa (4 líneas: A, E, C, G)</li>
+          <li>Formato: <code>A|-0-2-0-2-3-2-0-|</code></li>
+          <li><strong>Múltiples líneas:</strong> Cada tablatura genera una linea de notación separada.</li>
+        </ul>
+
+        <textarea id="input-tab" placeholder="Pegá aquí la tablatura:&#10;A|-------------|&#10;E|----0-2-3-2-0|&#10;C|--2----------|&#10;G|0------------|"></textarea>
+
+        <div class="row">
+          <button id="btn-gen-tab">Convertir</button>
+          <button id="btn-sample-tab">Cargar ejemplo</button>
+        </div>
+
+        <div class="output" id="outbox-tab" hidden>
+          <pre id="output-tab"></pre>
+          <div class="toolbar">
+            <button id="btn-copy-tab">Copiar</button>
+            <button id="btn-download-tab">Descargar .txt</button>
           </div>
         </div>
       </div>
@@ -145,6 +173,8 @@ import Layout from '../../layouts/Layout.astro';
       const STRINGS = new Set(["G","C","E","A"]);
 
       const $ = (id) => document.getElementById(id);
+
+      // Primer generador (Notación → Tablatura)
       const $input = $("input");
       const $gen = $("btn-gen");
       const $sample = $("btn-sample");
@@ -153,7 +183,31 @@ import Layout from '../../layouts/Layout.astro';
       const $copy = $("btn-copy");
       const $dl = $("btn-download");
 
+      // Segundo generador (Tablatura → Notación)
+      const $inputTab = $("input-tab");
+      const $genTab = $("btn-gen-tab");
+      const $sampleTab = $("btn-sample-tab");
+      const $outboxTab = $("outbox-tab");
+      const $outTab = $("output-tab");
+      const $copyTab = $("btn-copy-tab");
+      const $dlTab = $("btn-download-tab");
+
       const SAMPLE = "G0 C2 E0 E2 E3 E2 E0\n\nA0 A2 Ax+Ex+Cx+Gx A3 A2 A0\n\nG0+E0 C2+E2 G0+E0";
+
+      const SAMPLE_TAB = `A|-------------|
+E|----0-2-3-2-0|
+C|--2----------|
+G|0------------|
+
+A|0-2-x-3-2-0|
+E|----x------|
+C|----x------|
+G|----x------|
+
+A|-----|
+E|0-2-0|
+C|--2--|
+G|0---0|`;
 
       function parseColumns(text) {
         // Dividir por líneas primero
@@ -221,6 +275,109 @@ import Layout from '../../layouts/Layout.astro';
         return result.join("\n");
       }
 
+            // Funciones para el segundo generador (Tablatura → Notación)
+      function parseTab(tabText) {
+        const lines = tabText.trim().split('\n');
+        const tabs = [];
+        let currentTab = {};
+
+        for (const line of lines) {
+          if (line.trim() === '') {
+            // Línea vacía - terminar tablatura actual y empezar nueva
+            if (Object.keys(currentTab).length > 0) {
+              tabs.push(currentTab);
+              currentTab = {};
+            }
+            continue;
+          }
+
+          const match = line.match(/^([AECG])\|(.+)\|$/);
+          if (match) {
+            const [, string, content] = match;
+            currentTab[string] = content;
+          }
+        }
+
+        // Agregar la última tablatura si existe
+        if (Object.keys(currentTab).length > 0) {
+          tabs.push(currentTab);
+        }
+
+        return tabs;
+      }
+
+      function tabToNotation(tabLines) {
+        const result = [];
+        const maxLength = Math.max(...Object.values(tabLines).map(line => line.length));
+
+        // Procesar columna por columna
+        for (let col = 0; col < maxLength; col++) {
+          const column = [];
+
+          for (const string of ORDER) {
+            const line = tabLines[string] || '';
+            const char = line[col] || '-';
+
+            if (char !== '-') {
+              column.push(`${string}${char}`);
+            }
+          }
+
+          if (column.length > 0) {
+            result.push(column.join('+'));
+          }
+        }
+
+        return result.join(' ');
+      }
+
+      function tabsToNotation(tabs) {
+        return tabs.map(tab => tabToNotation(tab)).join('\n\n');
+      }
+
+      function generateTab() {
+        if (!$inputTab) return;
+        const raw = ($inputTab as HTMLTextAreaElement).value;
+        if (!raw.trim()) {
+          if ($outboxTab) $outboxTab.hidden = true;
+          return;
+        }
+
+        const tabs = parseTab(raw);
+        const output = tabsToNotation(tabs);
+
+        if ($outTab) $outTab.textContent = output;
+        if ($outboxTab) $outboxTab.hidden = false;
+      }
+
+      function copyOutTab() {
+        if (!$outTab) return;
+        const txt = $outTab.textContent || "";
+        if (!txt) return;
+        navigator.clipboard.writeText(txt).then(() => {
+          if (!$copyTab) return;
+          const prev = $copyTab.textContent;
+          $copyTab.textContent = "¡Copiado!";
+          setTimeout(() => {
+            if ($copyTab) $copyTab.textContent = prev;
+          }, 800);
+        });
+      }
+
+      function downloadOutTab() {
+        if (!$outTab) return;
+        const txt = $outTab.textContent || "";
+        if (!txt) return;
+        const blob = new Blob([txt], { type: "text/plain;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url; a.download = "ukulele-notation.txt";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      }
+
       function generate() {
         if (!$input) return;
         const raw = ($input as HTMLTextAreaElement).value;
@@ -264,6 +421,7 @@ import Layout from '../../layouts/Layout.astro';
         URL.revokeObjectURL(url);
       }
 
+      // Event listeners para el primer generador
       if ($gen) $gen.addEventListener("click", generate);
       if ($sample) $sample.addEventListener("click", () => {
         if ($input) {
@@ -274,8 +432,20 @@ import Layout from '../../layouts/Layout.astro';
       if ($copy) $copy.addEventListener("click", copyOut);
       if ($dl) $dl.addEventListener("click", downloadOut);
 
+      // Event listeners para el segundo generador
+      if ($genTab) $genTab.addEventListener("click", generateTab);
+      if ($sampleTab) $sampleTab.addEventListener("click", () => {
+        if ($inputTab) {
+          ($inputTab as HTMLTextAreaElement).value = SAMPLE_TAB;
+          generateTab();
+        }
+      });
+      if ($copyTab) $copyTab.addEventListener("click", copyOutTab);
+      if ($dlTab) $dlTab.addEventListener("click", downloadOutTab);
+
       // Autogenerar si ya hay texto (p.ej. hot-reload)
       if ($input && ($input as HTMLTextAreaElement).value.trim()) generate();
+      if ($inputTab && ($inputTab as HTMLTextAreaElement).value.trim()) generateTab();
     </script>
   </body>
 </html>

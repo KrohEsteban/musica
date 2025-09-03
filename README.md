@@ -6,8 +6,7 @@ Una guía completa de teoría musical aplicada específicamente al ukelele, dise
 
 ### Prerrequisitos
 
-- Node.js 20+
-- Docker y Docker Compose (opcional)
+- Docker y Docker Compose
 
 ### Instalación
 
@@ -15,36 +14,60 @@ Una guía completa de teoría musical aplicada específicamente al ukelele, dise
 # Clonar el repositorio
 git clone https://github.com/KrohEsteban/musica.git
 cd musica
+```
 
+### Desarrollo con Docker (Recomendado)
+
+#### Primera vez (setup inicial)
+
+```bash
+# 1. Instalar dependencias
+docker compose run --rm cli pnpm install
+
+# 2. Levantar el servidor de desarrollo
+docker compose up app
+
+# El sitio estará disponible en http://localhost:4321/musica
+```
+
+### Comandos con Docker
+
+```bash
+# Servidor de desarrollo
+docker compose up app
+
+# Ejecutar comandos en el contenedor
+docker compose run --rm cli pnpm install    # Instalar dependencias
+docker compose run --rm cli pnpm run build  # Construir para producción
+docker compose run --rm cli pnpm run preview # Vista previa de la build
+
+# Acceder al shell del contenedor
+docker compose run --rm cli sh
+```
+
+### Desarrollo Local (Alternativo)
+
+Prerrequisitos:
+- Node.js 20+
+- pnpm
+
+```bash
 # Instalar dependencias
-npm install
-```
+pnpm install
 
-### Desarrollo Local
-
-```bash
 # Iniciar servidor de desarrollo
-npm run dev
+pnpm run dev
 
-# El sitio estará disponible en http://localhost:4321
-```
-
-### Desarrollo con Docker
-
-```bash
-# Iniciar con Docker Compose
-docker compose up
-
-# El sitio estará disponible en http://localhost:4321
+# El sitio estará disponible en http://localhost:4321/musica
 ```
 
 ### Comandos Disponibles
 
 ```bash
-npm run dev      # Servidor de desarrollo
-npm run build    # Construir para producción
-npm run preview  # Vista previa de la build
-npm run astro    # CLI de Astro
+pnpm run dev      # Servidor de desarrollo
+pnpm run build    # Construir para producción
+pnpm run preview  # Vista previa de la build
+pnpm run astro    # CLI de Astro
 ```
 
 ## 📁 Estructura del Proyecto
@@ -90,6 +113,7 @@ musica/
 
 - **[Astro](https://astro.build/)** - Framework web moderno
 - **[TypeScript](https://www.typescriptlang.org/)** - Tipado estático
+- **[pnpm](https://pnpm.io/)** - Gestor de paquetes rápido y eficiente
 - **[Docker](https://www.docker.com/)** - Containerización
 - **[GitHub Actions](https://github.com/features/actions)** - CI/CD
 

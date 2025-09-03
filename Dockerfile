@@ -1,10 +1,14 @@
 FROM node:20-alpine
 
-RUN npm install -g npm-check-updates \
-    && npm install -g cspell @cspell/dict-es-es
+# Install pnpm
+RUN npm install -g pnpm
+
+# Install global tools
+RUN pnpm add -g npm-check-updates \
+    && pnpm add -g cspell @cspell/dict-es-es
 
 WORKDIR /app
 
 COPY . .
 
-RUN npm install
+RUN pnpm install

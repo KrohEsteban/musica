@@ -59,6 +59,65 @@ import Layout from '../../layouts/Layout.astro';
     <li><strong>F</strong>: F  - G  - A  - Bb - C  - D  - E  - F</li>
   </ul>
 
+  <h4><strong>¿Por qué estas notas específicas?</strong></h4>
+
+  <p>Cada escala mayor sigue la misma fórmula de intervalos: <strong>T - T - ST - T - T - T - ST</strong></p>
+
+  <p><strong>Escala Cromática (todas las notas):</strong><br>
+  C - C# - D - D# - E - F - F# - G - G# - A - A# - B - C</p>
+
+  <div class="scale-explanation">
+    <h5><strong>Ejemplo: Escala de C Mayor</strong></h5>
+    <p><strong>Paso a paso desde C:</strong></p>
+    <ul>
+      <li><strong>C</strong> (nota inicial)</li>
+      <li><strong>C → D</strong>: +1 tono (C - C# - D)</li>
+      <li><strong>D → E</strong>: +1 tono (D - D# - E)</li>
+      <li><strong>E → F</strong>: +1 semitono (E - F)</li>
+      <li><strong>F → G</strong>: +1 tono (F - F# - G)</li>
+      <li><strong>G → A</strong>: +1 tono (G - G# - A)</li>
+      <li><strong>A → B</strong>: +1 tono (A - A# - B)</li>
+      <li><strong>B → C</strong>: +1 semitono (B - C)</li>
+    </ul>
+    <p><strong>Resultado:</strong> C - D - E - F - G - A - B - C</p>
+  </div>
+
+  <div class="scale-explanation">
+    <h5><strong>Ejemplo: Escala de G Mayor</strong></h5>
+    <p><strong>Paso a paso desde G:</strong></p>
+    <ul>
+      <li><strong>G</strong> (nota inicial)</li>
+      <li><strong>G → A</strong>: +1 tono (G - G# - A)</li>
+      <li><strong>A → B</strong>: +1 tono (A - A# - B)</li>
+      <li><strong>B → C</strong>: +1 semitono (B - C)</li>
+      <li><strong>C → D</strong>: +1 tono (C - C# - D)</li>
+      <li><strong>D → E</strong>: +1 tono (D - D# - E)</li>
+      <li><strong>E → F#</strong>: +1 tono (E - F - F#)</li>
+      <li><strong>F# → G</strong>: +1 semitono (F# - G)</li>
+    </ul>
+    <p><strong>Resultado:</strong> G - A - B - C - D - E - F# - G</p>
+    <p><em>Nota: Necesitamos F# para mantener la fórmula T-T-ST-T-T-T-ST</em></p>
+  </div>
+
+  <div class="scale-explanation">
+    <h5><strong>Ejemplo: Escala de F Mayor</strong></h5>
+    <p><strong>Paso a paso desde F:</strong></p>
+    <ul>
+      <li><strong>F</strong> (nota inicial)</li>
+      <li><strong>F → G</strong>: +1 tono (F - F# - G)</li>
+      <li><strong>G → A</strong>: +1 tono (G - G# - A)</li>
+      <li><strong>A → Bb</strong>: +1 semitono (A - Bb)</li>
+      <li><strong>Bb → C</strong>: +1 tono (Bb - B - C)</li>
+      <li><strong>C → D</strong>: +1 tono (C - C# - D)</li>
+      <li><strong>D → E</strong>: +1 tono (D - D# - E)</li>
+      <li><strong>E → F</strong>: +1 semitono (E - F)</li>
+    </ul>
+    <p><strong>Resultado:</strong> F - G - A - Bb - C - D - E - F</p>
+    <p><em>Nota: Necesitamos Bb para mantener la fórmula T-T-ST-T-T-T-ST</em></p>
+  </div>
+
+  <p><strong>Conclusión:</strong> Las alteraciones (sostenidos # y bemoles ♭) se agregan automáticamente cuando es necesario para mantener la fórmula de intervalos de la escala mayor. Por eso G mayor tiene F#, D mayor tiene F# y C#, etc.</p>
+
   <hr />
 
   <h3 id="patrones-de-escala-mayor-en-ukelele">Patrones de Escala Mayor en Ukelele</h3>
@@ -561,6 +620,45 @@ G|---|---|---|-x-|---
     opacity: 0.8;
   }
 
+  .scale-explanation {
+    background: #f0f8ff;
+    border: 1px solid #b3d9ff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid #0066cc;
+  }
+
+  .scale-explanation h5 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .scale-explanation ul {
+    margin-bottom: 1rem;
+  }
+
+  .scale-explanation li {
+    margin-bottom: 0.5rem;
+  }
+
+  .scale-explanation p {
+    margin-bottom: 0.5rem;
+  }
+
+  .scale-explanation p:last-child {
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+
+  .scale-explanation em {
+    color: #6c757d;
+    font-style: italic;
+  }
+
   @media (max-width: 768px) {
     .chord-card {
       padding: 1rem;
@@ -583,6 +681,10 @@ G|---|---|---|-x-|---
     }
 
     .progression-example {
+      padding: 1rem;
+    }
+
+    .scale-explanation {
       padding: 1rem;
     }
   }

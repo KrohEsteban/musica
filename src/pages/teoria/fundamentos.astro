@@ -110,7 +110,51 @@ import Layout from '../../layouts/Layout.astro';
   <h3 id="escala-cromatica">Escala Cromática</h3>
 
   <p><strong>Todas las notas musicales (incluyendo sostenidos y bemoles):</strong></p>
-  <pre><code>C - C#/Db - D - D#/Eb - E - F - F#/Gb - G - G#/Ab - A - A#/Bb - B - C</code></pre>
+  <p>C - C#/Db - D - D#/Eb - E - F - F#/Gb - G - G#/Ab - A - A#/Bb - B - C</p>
+
+  <h4><strong>¿Qué son los Sostenidos (#) y Bemoles (♭)?</strong></h4>
+
+  <p>Los <strong>sostenidos</strong> y <strong>bemoles</strong> son <strong>alteraciones</strong> que modifican la altura de las notas musicales:</p>
+
+  <div class="alteration-explanation">
+    <h5><strong>🎵 Sostenido (#)</strong></h5>
+    <p><strong>Definición:</strong> Sube la nota <strong>medio tono</strong> (1 semitono)</p>
+    <p><strong>Ejemplos:</strong></p>
+    <ul>
+      <li><strong>C#</strong> = C sostenido (C subido medio tono)</li>
+      <li><strong>F#</strong> = F sostenido (F subido medio tono)</li>
+      <li><strong>G#</strong> = G sostenido (G subido medio tono)</li>
+    </ul>
+    <p><strong>En el ukelele:</strong> Si C está en el traste 3, entonces C# está en el traste 4</p>
+  </div>
+
+  <div class="alteration-explanation">
+    <h5><strong>🎵 Bemol (♭)</strong></h5>
+    <p><strong>Definición:</strong> Baja la nota <strong>medio tono</strong> (1 semitono)</p>
+    <p><strong>Ejemplos:</strong></p>
+    <ul>
+      <li><strong>Db</strong> = D bemol (D bajado medio tono)</li>
+      <li><strong>Bb</strong> = B bemol (B bajado medio tono)</li>
+      <li><strong>Eb</strong> = E bemol (E bajado medio tono)</li>
+    </ul>
+    <p><strong>En el ukelele:</strong> Si D está en el traste 2, entonces Db está en el traste 1</p>
+  </div>
+
+  <div class="enharmonic-explanation">
+    <h5><strong>🔄 Notas Enarmónicas</strong></h5>
+    <p><strong>¿Qué son?</strong> Son notas que <strong>suenan igual</strong> pero se escriben de forma diferente.</p>
+    <p><strong>Ejemplos en la escala cromática:</strong></p>
+    <ul>
+      <li><strong>C# = Db</strong> (misma nota, diferente nombre)</li>
+      <li><strong>D# = Eb</strong> (misma nota, diferente nombre)</li>
+      <li><strong>F# = Gb</strong> (misma nota, diferente nombre)</li>
+      <li><strong>G# = Ab</strong> (misma nota, diferente nombre)</li>
+      <li><strong>A# = Bb</strong> (misma nota, diferente nombre)</li>
+    </ul>
+    <p><strong>¿Por qué existen?</strong> Depende del contexto musical y la tonalidad que estés usando.</p>
+  </div>
+
+  <p><strong>Conclusión:</strong> La escala cromática contiene todas las notas posibles en la música occidental, separadas por intervalos de 1 semitono. Los sostenidos y bemoles nos permiten nombrar estas notas intermedias de diferentes maneras según el contexto musical.</p>
 
   <hr />
 
@@ -487,5 +531,103 @@ G|---|-0-|---</code></pre>
     margin: 1rem auto;
     border: 1px solid #ddd;
     border-radius: 5px;
+  }
+
+  .alteration-explanation {
+    background: #f0f8ff;
+    border: 1px solid #b3d9ff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid #0066cc;
+  }
+
+  .alteration-explanation h5 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .alteration-explanation ul {
+    margin-bottom: 1rem;
+  }
+
+  .alteration-explanation li {
+    margin-bottom: 0.5rem;
+  }
+
+  .alteration-explanation p {
+    margin-bottom: 0.5rem;
+  }
+
+  .enharmonic-explanation {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid #f39c12;
+  }
+
+  .enharmonic-explanation h5 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .enharmonic-explanation ul {
+    margin-bottom: 1rem;
+  }
+
+  .enharmonic-explanation li {
+    margin-bottom: 0.5rem;
+  }
+
+  .enharmonic-explanation p {
+    margin-bottom: 0.5rem;
+  }
+
+  .chromatic-steps {
+    background: #e8f5e8;
+    border: 1px solid #c3e6c3;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid #28a745;
+  }
+
+  .chromatic-steps h5 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .chromatic-steps ul {
+    margin-bottom: 1rem;
+  }
+
+  .chromatic-steps li {
+    margin-bottom: 0.5rem;
+  }
+
+  .chromatic-steps p {
+    margin-bottom: 0.5rem;
+  }
+
+  .chromatic-steps p:last-child {
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+
+  @media (max-width: 768px) {
+    .alteration-explanation,
+    .enharmonic-explanation,
+    .chromatic-steps {
+      padding: 1rem;
+    }
   }
 </style>

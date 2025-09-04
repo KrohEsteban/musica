@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getUrl } from '../config.ts';
 ---
 
 <Layout title="🎵 Teoría Musical enfocada en Ukelele">
@@ -8,7 +9,7 @@ import Layout from '../layouts/Layout.astro';
     <p class="hero-subtitle">Anotaciones, teoría y canciones que he recopilado en mi aprendizaje</p>
 
     <div class="hero-image">
-      <img src="/musica/img/ukeleles.png" alt="Colección de ukeleles de colores" />
+      <img src={getUrl("/img/ukeleles.png")} alt="Colección de ukeleles de colores" />
     </div>
 
     <div class="personal-intro">

@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getUrl } from '../../config.ts';
 ---
 
 <Layout title="🎼 Escalas, Acordes y Progresiones">
@@ -9,27 +10,10 @@ import Layout from '../../layouts/Layout.astro';
 
   <h2>Contenido</h2>
 
-  <h3>Escalas</h3>
   <ul>
-    <li><a href="#estructura-de-la-escala-mayor">Estructura de la Escala Mayor</a></li>
-    <li><a href="#ejemplos-de-escalas-mayores">Ejemplos de Escalas Mayores</a></li>
-    <li><a href="#patrones-de-escala-mayor-en-ukelele">Patrones de Escala Mayor - Ukelele</a></li>
-    <li><a href="#estructura-de-la-escala-menor">Estructura de la Escala Menor</a></li>
-    <li><a href="#ejemplos-de-escalas-menores">Ejemplos de Escalas Menores</a></li>
-
-  </ul>
-
-  <h3>Acordes</h3>
-  <ul>
-    <li><a href="#construccion-de-acordes">Construcción de Acordes</a></li>
-    <li><a href="#acordes-diatonicos">Acordes Diatónicos</a></li>
-  </ul>
-
-  <h3>Progresiones</h3>
-  <ul>
-    <li><a href="#grados-de-acordes">Grados de los Acordes</a></li>
-    <li><a href="#progresiones-de-acordes-comunes">Progresiones de Acordes Comunes</a></li>
-    <li><a href="#funciones-tonales">Funciones Tonales</a></li>
+    <li><a href="#escalas">Escalas</a></li>
+    <li><a href="#acordes">Acordes</a></li>
+    <li><a href="#progresiones">Progresiones</a></li>
   </ul>
 
   <hr />
@@ -127,7 +111,7 @@ import Layout from '../../layouts/Layout.astro';
   <div class="fretboard-reference">
     <h4><strong>Referencia del Diapasón del Ukelele</strong></h4>
     <p>Esta imagen te ayudará a ubicar todas las notas en el ukelele:</p>
-    <img src="/musica/img/ukelele-notas.png" alt="Diapasón del ukelele con todas las notas marcadas" style="width: 100%; max-width: 600px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
+    <img src={getUrl("/img/ukelele-notas.png")} alt="Diapasón del ukelele con todas las notas marcadas" style="width: 100%; max-width: 600px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
     <p><em>Diapasón completo del ukelele mostrando todas las notas en cada traste</em></p>
   </div>
 
@@ -180,7 +164,7 @@ G|---|---|---|-x-|---
   <div class="chords-reference">
     <h4><strong>Referencia de Acordes del Ukelele</strong></h4>
     <p>Esta imagen te servirá como guía rápida para todos los acordes básicos del ukelele:</p>
-    <img src="/musica/img/ukelele-acordes.png" alt="Tabla completa de acordes del ukelele" style="width: 100%; max-width: 800px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
+    <img src={getUrl("/img/ukelele-acordes.png")} alt="Tabla completa de acordes del ukelele" style="width: 100%; max-width: 800px; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" />
     <p><em>Tabla completa de acordes del ukelele con posiciones de dedos y tipos de acordes</em></p>
   </div>
 
@@ -477,7 +461,6 @@ G|---|---|---|-x-|---
 
 
 </Layout>
-
 <style>
   .chord-card {
     background: #f8f9fa;

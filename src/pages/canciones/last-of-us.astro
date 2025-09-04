@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getUrl } from '../../config.ts';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
@@ -7,16 +8,12 @@ import { join } from 'path';
 const tabContent = readFileSync(join(process.cwd(), 'data/tabs/last-of-us.txt'), 'utf-8');
 ---
 
-<style>
-  @import '../../styles/canciones.css';
-</style>
-
 <Layout title="Last of Us - Main Theme">
     <h1>🎮 Last of Us - Main Theme</h1>
 
   <div class="card">
     <h2>🎵 Tablatura</h2>
-    <p>Esta es la tablatura generada usando nuestro <a href="/musica/tabs/generador">generador de tabs</a>:</p>
+    <p>Esta es la tablatura generada usando nuestro <a href={getUrl("/tabs/generador")}>generador de tabs</a>:</p>
 
   <div class="card">
     <h2>🎯 Cómo tocar</h2>
@@ -34,6 +31,6 @@ const tabContent = readFileSync(join(process.cwd(), 'data/tabs/last-of-us.txt'),
   <div class="card">
     <h2>🔧 Generar tu propia versión</h2>
     <p>¿Quieres modificar esta tab o crear tu propia versión?</p>
-    <p><a href="/musica/tabs/generador" class="button">Ir al Generador de Tabs</a></p>
+    <p><a href={getUrl("/tabs/generador")} class="button">Ir al Generador de Tabs</a></p>
   </div>
 </Layout>

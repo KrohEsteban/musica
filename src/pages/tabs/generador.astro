@@ -168,29 +168,37 @@ import Layout from '../../layouts/Layout.astro';
 </style>
 
 <script>
-      // Orden de impresión (A, E, C, G)
-      const ORDER = ["A","E","C","G"];
-      const STRINGS = new Set(["G","C","E","A"]);
+      // Tipos TypeScript
+      type StringName = "A" | "E" | "C" | "G";
+      type Token = string;
+      type Column = Token[];
+      type Line = Column[];
+      type TabLine = Record<StringName, string>;
+      type Tab = TabLine[];
 
-      const $ = (id) => document.getElementById(id);
+      // Orden de impresión (A, E, C, G)
+      const ORDER: StringName[] = ["A","E","C","G"];
+      const STRINGS = new Set<StringName>(["G","C","E","A"]);
+
+      const $ = (id: string): HTMLElement | null => document.getElementById(id);
 
       // Primer generador (Notación → Tablatura)
-      const $input = $("input");
-      const $gen = $("btn-gen");
-      const $sample = $("btn-sample");
-      const $outbox = $("outbox");
-      const $out = $("output");
-      const $copy = $("btn-copy");
-      const $dl = $("btn-download");
+      const $input = $("input") as HTMLTextAreaElement;
+      const $gen = $("btn-gen") as HTMLButtonElement;
+      const $sample = $("btn-sample") as HTMLButtonElement;
+      const $outbox = $("outbox") as HTMLDivElement;
+      const $out = $("output") as HTMLPreElement;
+      const $copy = $("btn-copy") as HTMLButtonElement;
+      const $dl = $("btn-download") as HTMLButtonElement;
 
       // Segundo generador (Tablatura → Notación)
-      const $inputTab = $("input-tab");
-      const $genTab = $("btn-gen-tab");
-      const $sampleTab = $("btn-sample-tab");
-      const $outboxTab = $("outbox-tab");
-      const $outTab = $("output-tab");
-      const $copyTab = $("btn-copy-tab");
-      const $dlTab = $("btn-download-tab");
+      const $inputTab = $("input-tab") as HTMLTextAreaElement;
+      const $genTab = $("btn-gen-tab") as HTMLButtonElement;
+      const $sampleTab = $("btn-sample-tab") as HTMLButtonElement;
+      const $outboxTab = $("outbox-tab") as HTMLDivElement;
+      const $outTab = $("output-tab") as HTMLPreElement;
+      const $copyTab = $("btn-copy-tab") as HTMLButtonElement;
+      const $dlTab = $("btn-download-tab") as HTMLButtonElement;
 
       const SAMPLE = "G0 C2 E0 E2 E3 E2 E0\n\nA0 A2 Ax+Ex+Cx+Gx A3 A2 A0\n\nG0+E0 C2+E2 G0+E0";
 
@@ -209,22 +217,22 @@ E|0-2-0|
 C|--2--|
 G|0---0|`;
 
-      function parseColumns(text) {
+      function parseColumns(text: string): Line[] {
         // Dividir por líneas primero
         const lines = text.trim().split('\n');
 
-        return lines.map(line =>
+        return lines.map((line: string): Column[] =>
           line.trim()
             .split(/\s+/)              // separa columnas por espacio
             .filter(Boolean)
-            .map(col => col.split("+")  // acordes con '+'
-              .map(tok => tok.trim())
+            .map((col: string): Token[] => col.split("+")  // acordes con '+'
+              .map((tok: string): string => tok.trim())
               .filter(Boolean)
             )
         );
       }
 
-      function colWidth(tokens) {
+      function colWidth(tokens: Token[]): number {
         let maxLen = 1;
         for (const t of tokens) {
           const m = t.match(/^([GCEA])(.+)$/i);
@@ -235,8 +243,8 @@ G|0---0|`;
         return maxLen;
       }
 
-      function renderTab(linesOfColumns) {
-        const result = [];
+      function renderTab(linesOfColumns: Line[]): string {
+        const result: string[] = [];
 
         for (const columns of linesOfColumns) {
           if (columns.length === 0) {
@@ -245,47 +253,57 @@ G|0---0|`;
             continue;
           }
 
-          const lines = Object.fromEntries(ORDER.map(s => [s, []]));
+          const lines: Record<StringName, string[]> = {
+            A: [],
+            E: [],
+            C: [],
+            G: []
+          };
 
           for (const colTokens of columns) {
             const width = Math.max(1, colWidth(colTokens));
-            const cell = Object.fromEntries(ORDER.map(s => [s, "-".repeat(width)]));
+            const cell: Record<StringName, string> = {
+              A: "-".repeat(width),
+              E: "-".repeat(width),
+              C: "-".repeat(width),
+              G: "-".repeat(width)
+            };
 
             for (const tok of colTokens) {
               const m = tok.match(/^([GCEA])(.+)$/i);
               if (!m) continue;
               let [, s, fret] = m;
-              s = s.toUpperCase();
-              if (!STRINGS.has(s)) continue;
+              const stringName = s.toUpperCase() as StringName;
+              if (!STRINGS.has(stringName)) continue;
               if (fret === "-") continue;
 
               const text = String(fret);
               const padLeft = Math.floor((width - text.length) / 2);
               const padRight = width - text.length - padLeft;
-              cell[s] = "-".repeat(padLeft) + text + "-".repeat(padRight);
+              cell[stringName] = "-".repeat(padLeft) + text + "-".repeat(padRight);
             }
 
-            for (const s of ORDER) (lines as any)[s].push(cell[s]);
+            for (const s of ORDER) lines[s].push(cell[s]);
           }
 
-                    // Agregar las 4 líneas de esta tab
-          result.push(...ORDER.map(s => `${s}|${(lines as any)[s].join("-")}|`));
+          // Agregar las 4 líneas de esta tab
+          result.push(...ORDER.map(s => `${s}|${lines[s].join("-")}|`));
         }
 
         return result.join("\n");
       }
 
-            // Funciones para el segundo generador (Tablatura → Notación)
-      function parseTab(tabText) {
+      // Funciones para el segundo generador (Tablatura → Notación)
+      function parseTab(tabText: string): TabLine[] {
         const lines = tabText.trim().split('\n');
-        const tabs = [];
-        let currentTab = {};
+        const tabs: TabLine[] = [];
+        let currentTab: Partial<TabLine> = {};
 
         for (const line of lines) {
           if (line.trim() === '') {
             // Línea vacía - terminar tablatura actual y empezar nueva
             if (Object.keys(currentTab).length > 0) {
-              tabs.push(currentTab);
+              tabs.push(currentTab as TabLine);
               currentTab = {};
             }
             continue;
@@ -294,25 +312,25 @@ G|0---0|`;
           const match = line.match(/^([AECG])\|(.+)\|$/);
           if (match) {
             const [, string, content] = match;
-            currentTab[string] = content;
+            currentTab[string as StringName] = content;
           }
         }
 
         // Agregar la última tablatura si existe
         if (Object.keys(currentTab).length > 0) {
-          tabs.push(currentTab);
+          tabs.push(currentTab as TabLine);
         }
 
         return tabs;
       }
 
-      function tabToNotation(tabLines) {
-        const result = [];
-        const maxLength = Math.max(...Object.values(tabLines).map(line => line.length));
+      function tabToNotation(tabLines: TabLine): string {
+        const result: string[] = [];
+        const maxLength = Math.max(...Object.values(tabLines).map((line: string) => line.length));
 
         // Procesar columna por columna
         for (let col = 0; col < maxLength; col++) {
-          const column = [];
+          const column: string[] = [];
 
           for (const string of ORDER) {
             const line = tabLines[string] || '';
@@ -331,13 +349,13 @@ G|0---0|`;
         return result.join(' ');
       }
 
-      function tabsToNotation(tabs) {
-        return tabs.map(tab => tabToNotation(tab)).join('\n\n');
+      function tabsToNotation(tabs: TabLine[]): string {
+        return tabs.map((tab: TabLine) => tabToNotation(tab)).join('\n\n');
       }
 
-      function generateTab() {
+      function generateTab(): void {
         if (!$inputTab) return;
-        const raw = ($inputTab as HTMLTextAreaElement).value;
+        const raw = $inputTab.value;
         if (!raw.trim()) {
           if ($outboxTab) $outboxTab.hidden = true;
           return;
@@ -350,7 +368,7 @@ G|0---0|`;
         if ($outboxTab) $outboxTab.hidden = false;
       }
 
-      function copyOutTab() {
+      function copyOutTab(): void {
         if (!$outTab) return;
         const txt = $outTab.textContent || "";
         if (!txt) return;
@@ -364,7 +382,7 @@ G|0---0|`;
         });
       }
 
-      function downloadOutTab() {
+      function downloadOutTab(): void {
         if (!$outTab) return;
         const txt = $outTab.textContent || "";
         if (!txt) return;
@@ -378,9 +396,9 @@ G|0---0|`;
         URL.revokeObjectURL(url);
       }
 
-      function generate() {
+      function generate(): void {
         if (!$input) return;
-        const raw = ($input as HTMLTextAreaElement).value;
+        const raw = $input.value;
         if (!raw.trim()) {
           if ($outbox) $outbox.hidden = true;
           return;
@@ -393,7 +411,7 @@ G|0---0|`;
         if ($outbox) $outbox.hidden = false;
       }
 
-      function copyOut() {
+      function copyOut(): void {
         if (!$out) return;
         const txt = $out.textContent || "";
         if (!txt) return;
@@ -407,7 +425,7 @@ G|0---0|`;
         });
       }
 
-      function downloadOut() {
+      function downloadOut(): void {
         if (!$out) return;
         const txt = $out.textContent || "";
         if (!txt) return;

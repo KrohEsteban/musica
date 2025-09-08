@@ -20,5 +20,9 @@
     "escalas"
   ],
   "author": "Esteban Kroh",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^24.3.1",
+    "typescript": "^5.9.2"
+  }
 }

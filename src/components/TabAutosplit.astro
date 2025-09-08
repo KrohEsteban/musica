@@ -1,0 +1,257 @@
+---
+export interface Props {
+  tabText: string;
+  preferBarCuts?: boolean;
+  padding?: number;
+}
+
+const { tabText, preferBarCuts = true, padding = 16 } = Astro.props;
+
+// Función para normalizar líneas de tablatura
+function normalizeLines(raw: string): string[] {
+  const lines = raw.replace(/\r\n?/g, '\n').trim().split('\n').filter(Boolean);
+
+  // Buscar A| E| C| G| en esta tablatura
+  const wanted = ['A|','E|','C|','G|'];
+  const map = new Map();
+  for (const tag of wanted) {
+    const line = lines.find(l => l.startsWith(tag));
+    if (!line) throw new Error('Falta línea: ' + tag + ' en tablatura: ' + raw.substring(0, 50));
+    map.set(tag[0], line);
+  }
+
+  // Igualar longitudes con '-'
+  const maxLen = Math.max(...[...map.values()].map(s => s.length));
+  for (const k of map.keys()) {
+    let s = map.get(k);
+    if (s.length < maxLen) s = s + '-'.repeat(maxLen - s.length);
+    map.set(k, s);
+  }
+
+  return [map.get('A'), map.get('E'), map.get('C'), map.get('G')];
+}
+
+// Función para encontrar índice de corte en barras
+function findCutIndex(lines: string[], startIdx: number, limitIdx: number): number {
+  for (let i = limitIdx; i > startIdx; i--) {
+    const allBar = lines.every(l => l[i] === '|');
+    if (allBar) return i + 1;
+  }
+  return limitIdx;
+}
+
+// Función para dividir en bloques
+function splitIntoBlocks(lines: string[], charsPerLine: number): string[] {
+  const blocks = [];
+  const totalLen = lines[0].length;
+  let i = 0;
+
+  while (i < totalLen) {
+    let target = Math.min(i + charsPerLine, totalLen);
+
+    if (target < totalLen && preferBarCuts) {
+      const cut = findCutIndex(lines, i, target);
+      target = Math.max(cut, Math.min(target, totalLen));
+    }
+
+    const slice = lines.map(l => l.slice(i, target));
+    const maxInBlock = Math.max(...slice.map(s => s.length));
+    const padded = slice.map(s => s.padEnd(maxInBlock, '-'));
+    blocks.push(padded.join('\n'));
+
+    i = target;
+    if (i >= totalLen) break;
+    if (target === i) i = Math.min(i + 1, totalLen);
+  }
+
+  return blocks;
+}
+
+// Procesar la tablatura - solo normalizar, la división se hace en el cliente
+let normalizedLines: string[] = [];
+try {
+  normalizedLines = normalizeLines(tabText);
+} catch (error) {
+  console.error('Error procesando tablatura:', error);
+  normalizedLines = ['Error: ' + (error as Error).message];
+}
+---
+
+<div class="tab-wrap" role="img" aria-label="Tablatura">
+  <pre class="tab-block" data-tab-lines={JSON.stringify(normalizedLines)}>
+    {normalizedLines.join('\n')}
+  </pre>
+</div>
+
+<style>
+  .tab-wrap {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+  }
+
+  .tab-block {
+    display: block;
+    margin: 0 0 0 0;
+    padding: 0;
+    white-space: pre;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    min-width: fit-content;
+  }
+
+  .tab-block + .tab-block {
+    margin-top: 0.75rem;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+
+<script>
+  // Función para encontrar índice de corte en barras
+  function findCutIndex(lines: string[], startIdx: number, limitIdx: number): number {
+    for (let i = limitIdx; i > startIdx; i--) {
+      const allBar = lines.every(l => l[i] === '|');
+      if (allBar) return i + 1;
+    }
+    return limitIdx;
+  }
+
+  // Función para dividir en bloques
+  function splitIntoBlocks(lines: string[], charsPerLine: number, preferBarCuts: boolean = true): string[] {
+    const blocks = [];
+    const totalLen = lines[0].length;
+    let i = 0;
+
+    while (i < totalLen) {
+      let target = Math.min(i + charsPerLine, totalLen);
+
+      if (target < totalLen && preferBarCuts) {
+        const cut = findCutIndex(lines, i, target);
+        target = Math.max(cut, Math.min(target, totalLen));
+      }
+
+      const slice = lines.map(l => l.slice(i, target));
+      const maxInBlock = Math.max(...slice.map(s => s.length));
+      const padded = slice.map(s => s.padEnd(maxInBlock, '-'));
+      blocks.push(padded.join('\n'));
+
+      i = target;
+      if (i >= totalLen) break;
+      if (target === i) i = Math.min(i + 1, totalLen);
+    }
+
+    return blocks;
+  }
+
+  // Script para ajuste dinámico del ancho
+  function adjustTabWidth() {
+    const tabBlocks = document.querySelectorAll('.tab-block[data-tab-lines]');
+
+    if (tabBlocks.length === 0) return;
+
+    // Calcular ancho de caracter
+    const testEl = document.createElement('span');
+    testEl.textContent = 'M';
+    testEl.style.fontFamily = 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+    testEl.style.fontSize = '14px';
+    testEl.style.visibility = 'hidden';
+    testEl.style.position = 'absolute';
+    testEl.style.top = '-9999px';
+    document.body.appendChild(testEl);
+    const charWidth = testEl.getBoundingClientRect().width || 8;
+    document.body.removeChild(testEl);
+
+    // Calcular caracteres por línea basado en el ancho del contenedor de la página
+    const mainContainer = document.querySelector('main');
+    if (!mainContainer) {
+      console.warn('No se encontró el contenedor main');
+      return;
+    }
+
+    const containerWidth = mainContainer.getBoundingClientRect().width;
+    const padding = 80; // padding del contenedor (aumentado para más margen)
+
+    // Calcular charsPerLine proporcionalmente
+    // Base: 85 caracteres para 900px de ancho (reducido para evitar scroll)
+    const baseWidth = 900;
+    const baseChars = 90;
+    const ratio = (containerWidth - padding) / (baseWidth - padding);
+    let charsPerLine = Math.floor(baseChars * ratio);
+
+    // Límites razonables
+    if (charsPerLine < 20) charsPerLine = 20;
+    if (charsPerLine > 200) charsPerLine = 200;
+
+
+    // Aplicar el ancho a todos los bloques
+    tabBlocks.forEach(block => {
+      try {
+        const tabLinesData = block.getAttribute('data-tab-lines');
+        if (!tabLinesData) return;
+
+        const lines = JSON.parse(tabLinesData);
+
+        // Verificar si alguna línea excede el ancho
+        const maxLineLength = Math.max(...lines.map((line: string) => line.length));
+
+        if (maxLineLength <= charsPerLine) {
+          // No necesita división, mostrar como está
+          block.textContent = lines.join('\n');
+          return;
+        }
+
+        // Dividir las líneas en bloques
+        const newBlocks = splitIntoBlocks(lines, charsPerLine, true);
+
+        // Reemplazar el contenido del bloque con los nuevos bloques
+        block.innerHTML = newBlocks.map(blockContent =>
+          `<div class="tab-block">${blockContent}</div>`
+        ).join('\n');
+      } catch (error) {
+        console.error('Error procesando bloque de tablatura:', error);
+      }
+    });
+  }
+
+  // Ejecutar al cargar y al redimensionar
+  function initTabWidth() {
+    try {
+      adjustTabWidth();
+    } catch (error) {
+      console.error('❌ Error en ajuste de ancho:', error);
+    }
+  }
+
+  // Ejecutar cuando el DOM esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTabWidth);
+  } else {
+    // Ejecutar después de un pequeño delay para asegurar que el DOM esté listo
+    setTimeout(initTabWidth, 100);
+  }
+
+  // Reajustar en resize con debounce
+  let resizeTimeout: ReturnType<typeof setTimeout>;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(initTabWidth, 150);
+  });
+</script>

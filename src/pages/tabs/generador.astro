@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import TabAutosplit from '../../components/TabAutosplit.astro';
 ---
 
 <Layout title="🎸 Generador de Tabs (Ukelele)">
@@ -25,7 +26,7 @@ import Layout from '../../layouts/Layout.astro';
         </div>
 
         <div class="output" id="outbox" hidden>
-          <pre id="output"></pre>
+          <div id="tab-display"></div>
           <div class="toolbar">
             <button id="btn-copy">Copiar</button>
             <button id="btn-download">Descargar .txt</button>
@@ -102,6 +103,16 @@ import Layout from '../../layouts/Layout.astro';
     box-sizing: border-box;
   }
 
+  /* Estilo específico para el textarea del segundo generador (Tablatura → Notación) */
+  #input-tab {
+    overflow-x: auto;
+  }
+
+  /* Clase para cuando hay contenido */
+  #input-tab.has-content {
+    white-space: nowrap;
+  }
+
   .row {
     display: flex;
     gap: 8px;
@@ -164,6 +175,48 @@ import Layout from '../../layouts/Layout.astro';
   .card ul li {
     color: #666;
   }
+
+  /* Estilos del componente TabAutosplit */
+  .tab-wrap {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: hidden;
+    white-space: pre;
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .tab-block {
+    display: block;
+    margin: 0 0 0 0;
+    padding: 0;
+    white-space: pre;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    min-width: fit-content;
+  }
+
+  .tab-block + .tab-block {
+    margin-top: 0.5rem;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
 </style>
 
 <script>
@@ -186,9 +239,12 @@ import Layout from '../../layouts/Layout.astro';
       const $gen = $("btn-gen") as HTMLButtonElement;
       const $sample = $("btn-sample") as HTMLButtonElement;
       const $outbox = $("outbox") as HTMLDivElement;
-      const $out = $("output") as HTMLPreElement;
+      const $tabDisplay = $("tab-display") as HTMLDivElement;
       const $copy = $("btn-copy") as HTMLButtonElement;
       const $dl = $("btn-download") as HTMLButtonElement;
+
+      // Variable para almacenar la tablatura original generada
+      let originalTabOutput = "";
 
       // Segundo generador (Tablatura → Notación)
       const $inputTab = $("input-tab") as HTMLTextAreaElement;
@@ -352,6 +408,8 @@ G|0---0|`;
         return tabs.map((tab: TabLine) => tabToNotation(tab)).join('\n\n');
       }
 
+
+
       function generateTab(): void {
         if (!$inputTab) return;
         const raw = $inputTab.value;
@@ -366,6 +424,7 @@ G|0---0|`;
         if ($outTab) $outTab.textContent = output;
         if ($outboxTab) $outboxTab.hidden = false;
       }
+
 
       function copyOutTab(): void {
         if (!$outTab) return;
@@ -406,15 +465,53 @@ G|0---0|`;
         const cols = parseColumns(raw);
         const output = renderTab(cols);
 
-        if ($out) $out.textContent = output;
+        // Guardar la tablatura original para copiar/descargar
+        originalTabOutput = output;
+
+        // Dividir la tablatura en secciones (cada 4 líneas es una tablatura)
+        if ($tabDisplay) {
+          const lines = output.split('\n').filter(line => line.trim() !== ''); // Filtrar líneas vacías
+          const sections = [];
+
+          // Agrupar líneas en secciones de 4 (A, E, C, G)
+          for (let i = 0; i < lines.length; i += 4) {
+            const section = lines.slice(i, i + 4);
+            if (section.length === 4) {
+              sections.push(section.join('\n'));
+            }
+          }
+
+          // Renderizar cada sección por separado (inicialmente oculto)
+          const sectionsHtml = sections.map(section => `
+            <div class="tab-wrap" role="img" aria-label="Tablatura" style="visibility: hidden;">
+              <pre class="tab-block" data-tab-lines='${JSON.stringify(section.split('\n'))}'>${section}</pre>
+            </div>
+          `).join('');
+
+          $tabDisplay.innerHTML = sectionsHtml;
+
+          // Ejecutar el ajuste de TabAutosplit y luego mostrar
+          if (typeof adjustTabWidth === 'function') {
+            // Usar requestAnimationFrame para ejecutar tan pronto como sea posible
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                adjustTabWidth();
+
+                // Mostrar las tablaturas una vez ajustadas
+                const tabWraps = $tabDisplay.querySelectorAll('.tab-wrap');
+                tabWraps.forEach(wrap => {
+                  (wrap as HTMLElement).style.visibility = 'visible';
+                });
+              });
+            });
+          }
+        }
         if ($outbox) $outbox.hidden = false;
       }
 
       function copyOut(): void {
-        if (!$out) return;
-        const txt = $out.textContent || "";
-        if (!txt) return;
-        navigator.clipboard.writeText(txt).then(() => {
+        if (!originalTabOutput) return;
+        navigator.clipboard.writeText(originalTabOutput).then(() => {
           if (!$copy) return;
           const prev = $copy.textContent;
           $copy.textContent = "¡Copiado!";
@@ -425,10 +522,8 @@ G|0---0|`;
       }
 
       function downloadOut(): void {
-        if (!$out) return;
-        const txt = $out.textContent || "";
-        if (!txt) return;
-        const blob = new Blob([txt], { type: "text/plain;charset=utf-8" });
+        if (!originalTabOutput) return;
+        const blob = new Blob([originalTabOutput], { type: "text/plain;charset=utf-8" });
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url; a.download = "ukulele-tab.txt";
@@ -460,9 +555,157 @@ G|0---0|`;
       if ($copyTab) $copyTab.addEventListener("click", copyOutTab);
       if ($dlTab) $dlTab.addEventListener("click", downloadOutTab);
 
+      // Función para manejar white-space dinámicamente en el textarea de tablatura
+      function handleTabTextareaWhitespace() {
+        if (!$inputTab) return;
+
+        if ($inputTab.value.trim()) {
+          // Hay contenido: aplicar nowrap
+          $inputTab.classList.add('has-content');
+        } else {
+          // Sin contenido: permitir wrap para el placeholder
+          $inputTab.classList.remove('has-content');
+        }
+      }
+
+      // Aplicar eventos para manejar el white-space dinámicamente
+      if ($inputTab) {
+        $inputTab.addEventListener('input', handleTabTextareaWhitespace);
+        $inputTab.addEventListener('paste', () => {
+          // Usar timeout para que el contenido se procese primero
+          setTimeout(handleTabTextareaWhitespace, 10);
+        });
+
+        // Verificar estado inicial
+        handleTabTextareaWhitespace();
+      }
+
       // Autogenerar si ya hay texto (p.ej. hot-reload)
       if ($input && ($input as HTMLTextAreaElement).value.trim()) generate();
       if ($inputTab && ($inputTab as HTMLTextAreaElement).value.trim()) generateTab();
-    </script>
-  </body>
-</html>
+
+      // Script de TabAutosplit para división dinámica
+      function findCutIndex(lines: string[], startIdx: number, limitIdx: number): number {
+        for (let i = limitIdx; i > startIdx; i--) {
+          const allBar = lines.every(l => l[i] === '|');
+          if (allBar) return i + 1;
+        }
+        return limitIdx;
+      }
+
+      function splitIntoBlocks(lines: string[], charsPerLine: number, preferBarCuts: boolean = true): string[] {
+        const blocks = [];
+        const totalLen = lines[0].length;
+        let i = 0;
+
+        while (i < totalLen) {
+          let target = Math.min(i + charsPerLine, totalLen);
+
+          if (target < totalLen && preferBarCuts) {
+            const cut = findCutIndex(lines, i, target);
+            target = Math.max(cut, Math.min(target, totalLen));
+          }
+
+          const slice = lines.map(l => l.slice(i, target));
+          const maxInBlock = Math.max(...slice.map(s => s.length));
+          const padded = slice.map(s => s.padEnd(maxInBlock, '-'));
+          blocks.push(padded.join('\n'));
+
+          i = target;
+          if (i >= totalLen) break;
+          if (target === i) i = Math.min(i + 1, totalLen);
+        }
+
+        return blocks;
+      }
+
+      function adjustTabWidth() {
+        const tabBlocks = document.querySelectorAll('.tab-block[data-tab-lines]');
+
+        if (tabBlocks.length === 0) return;
+
+        // Calcular ancho de caracter
+        const testEl = document.createElement('span');
+        testEl.textContent = 'M';
+        testEl.style.fontFamily = 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+        testEl.style.fontSize = '14px';
+        testEl.style.visibility = 'hidden';
+        testEl.style.position = 'absolute';
+        testEl.style.top = '-9999px';
+        document.body.appendChild(testEl);
+        const charWidth = testEl.getBoundingClientRect().width || 8;
+        document.body.removeChild(testEl);
+
+        // Calcular caracteres por línea basado en el ancho del contenedor de la página
+        const mainContainer = document.querySelector('main');
+        if (!mainContainer) {
+          console.warn('No se encontró el contenedor main');
+          return;
+        }
+
+        const containerWidth = mainContainer.getBoundingClientRect().width;
+        const padding = 80; // padding del contenedor (aumentado para más margen)
+
+        // Calcular charsPerLine proporcionalmente
+        // Base: 85 caracteres para 900px de ancho (reducido para evitar scroll)
+        const baseWidth = 900;
+        const baseChars = 90;
+        const ratio = (containerWidth - padding) / (baseWidth - padding);
+        let charsPerLine = Math.floor(baseChars * ratio);
+
+        // Límites razonables
+        if (charsPerLine < 20) charsPerLine = 20;
+        if (charsPerLine > 200) charsPerLine = 200;
+
+        // Aplicar el ancho a todos los bloques
+        tabBlocks.forEach(block => {
+          try {
+            const tabLinesData = block.getAttribute('data-tab-lines');
+            if (!tabLinesData) return;
+
+            const lines = JSON.parse(tabLinesData);
+
+            // Verificar si alguna línea excede el ancho
+            const maxLineLength = Math.max(...lines.map((line: string) => line.length));
+
+            if (maxLineLength <= charsPerLine) {
+              // No necesita división, mostrar como está
+              block.textContent = lines.join('\n');
+              return;
+            }
+
+            // Dividir las líneas en bloques
+            const newBlocks = splitIntoBlocks(lines, charsPerLine, true);
+
+            // Reemplazar el contenido del bloque con los nuevos bloques
+            block.innerHTML = newBlocks.map(blockContent =>
+              `<div class="tab-block">${blockContent}</div>`
+            ).join('\n');
+          } catch (error) {
+            console.error('Error procesando bloque de tablatura:', error);
+          }
+        });
+      }
+
+      function initTabWidth() {
+        try {
+          adjustTabWidth();
+        } catch (error) {
+          console.error('❌ Error en ajuste de ancho:', error);
+        }
+      }
+
+      // Ejecutar cuando el DOM esté listo
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTabWidth);
+      } else {
+        setTimeout(initTabWidth, 100);
+      }
+
+      // Reajustar en resize con debounce
+      let resizeTimeout: ReturnType<typeof setTimeout>;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(initTabWidth, 150);
+      });
+</script>

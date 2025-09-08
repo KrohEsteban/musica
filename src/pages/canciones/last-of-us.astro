@@ -1,19 +1,110 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import TabAutosplit from '../../components/TabAutosplit.astro';
 import { getUrl } from '../../config.ts';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-// Leer la tablatura desde el archivo de texto
-const tabContent = readFileSync(join(process.cwd(), 'data/tabs/last-of-us.txt'), 'utf-8');
+// Estilos para las secciones de tablatura
+const tabSectionStyles = `
+  .tab-section {
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    background: #f8f9fa;
+  }
+
+  .tab-section .tab-wrap {
+    margin-bottom: 1rem;
+  }
+
+  .toolbar {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+
+  .toolbar button {
+    background: transparent;
+    color: #333;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+
+  .toolbar button:hover {
+    border-color: #3498db;
+  }
+`;
+
+// Función para dividir el archivo de tablaturas en partes basándose en la estructura de 4 cuerdas
+function splitTabsByStructure(rawContent: string): string[] {
+  const lines = rawContent.replace(/\r\n?/g, '\n').trim().split('\n');
+  const tabSections: string[] = [];
+  let currentTab: string[] = [];
+
+  for (const line of lines) {
+    const trimmedLine = line.trim();
+
+    // Si la línea comienza con una letra de cuerda (A, E, C, G), es parte de una tablatura
+    if (/^[AECG]\|/.test(trimmedLine)) {
+      currentTab.push(line);
+
+      // Si tenemos 4 líneas de cuerdas, hemos completado una tablatura
+      if (currentTab.length === 4) {
+        tabSections.push(currentTab.join('\n'));
+        currentTab = [];
+      }
+    } else if (trimmedLine === '' && currentTab.length > 0) {
+      // Línea en blanco - si tenemos contenido parcial, completar con líneas vacías
+      while (currentTab.length < 4) {
+        currentTab.push('');
+      }
+      tabSections.push(currentTab.join('\n'));
+      currentTab = [];
+    }
+  }
+
+  // Agregar la última tablatura si queda contenido
+  if (currentTab.length > 0) {
+    while (currentTab.length < 4) {
+      currentTab.push('');
+    }
+    tabSections.push(currentTab.join('\n'));
+  }
+
+  return tabSections;
+}
+
+// Leer y procesar las tablaturas
+const rawTabContent = readFileSync(join(process.cwd(), 'data/tabs/last-of-us.txt'), 'utf-8');
+const tabSections = splitTabsByStructure(rawTabContent);
 ---
 
+
 <Layout title="Last of Us - Main Theme">
-    <h1>🎮 Last of Us - Main Theme</h1>
+  <style set:html={tabSectionStyles}></style>
+
+  <h1>🎮 Last of Us - Main Theme</h1>
 
   <div class="card">
     <h2>🎵 Tablatura</h2>
     <p>Esta es la tablatura generada usando nuestro <a href={getUrl("/tabs/generador")}>generador de tabs</a>:</p>
+
+    <div class="tab-section">
+      {tabSections.map((tabSection, index) => (
+        <TabAutosplit tabText={tabSection} />
+      ))}
+    </div>
+
+    <div class="toolbar">
+      <button id="btn-copy-tab">Copiar Tablatura</button>
+      <button id="btn-download-tab">Descargar .txt</button>
+    </div>
+  </div>
 
   <div class="card">
     <h2>🎯 Cómo tocar</h2>
@@ -23,14 +114,45 @@ const tabContent = readFileSync(join(process.cwd(), 'data/tabs/last-of-us.txt'),
     </ul>
   </div>
 
-          <div class="tab-container">
-        <pre class="tab-output">{tabContent}</pre>
-      </div>
-  </div>
-
   <div class="card">
     <h2>🔧 Generar tu propia versión</h2>
     <p>¿Quieres modificar esta tab o crear tu propia versión?</p>
     <p><a href={getUrl("/tabs/generador")} class="button">Ir al Generador de Tabs</a></p>
   </div>
 </Layout>
+
+<script define:vars={{ rawTabContent }}>
+  // Contenido original del archivo para copiar/descargar
+  const originalTabContent = rawTabContent;
+
+  const copyBtn = document.getElementById('btn-copy-tab');
+  const downloadBtn = document.getElementById('btn-download-tab');
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(originalTabContent).then(() => {
+        const prev = copyBtn.textContent;
+        copyBtn.textContent = '¡Copiado!';
+        setTimeout(() => {
+          copyBtn.textContent = prev;
+        }, 1500);
+      }).catch(err => {
+        console.error('Error al copiar:', err);
+      });
+    });
+  }
+
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', () => {
+      const blob = new Blob([originalTabContent], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'last-of-us-tablatura.txt';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+  }
+</script>

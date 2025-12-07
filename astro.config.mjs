@@ -3,8 +3,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://krohesteban.github.io/musica',
-  base: '/musica',
+  site: 'https://musica.estebankroh.com',
   output: 'static',
   build: {
     assets: 'assets'
